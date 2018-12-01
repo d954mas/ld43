@@ -2,6 +2,7 @@ local COMMON = require "libs.common"
 local Observable = require "libs.observable_mixin"
 local Character = require "world.character"
 local CHARACTERS = require "world.characters"
+local EventManager = require "world.event_manager.event_manager"
 local TAG = "World"
 
 local CHAR_POSITIONS = {
@@ -36,6 +37,7 @@ function M:initialize()
 	Character(CHARACTERS[4],self),
 	Character(CHARACTERS[5],self)}
 	self:update_positions()
+	self.event_manager = EventManager()
 end
 
 function M:update_positions()
@@ -54,14 +56,15 @@ function M:set_state(state)
 	if self.state ~= state then
 		COMMON.LOG.w("state changed from:" ..  self.state .. " to " .. state )
 		self.state = state
-
+		local data
 		if self.state == STATES.EVENT then
 			self.movement_speed = 0
+			data = self.event_manager:get_next_event()
 		elseif self.state == STATES.WALK then
 			self.movement_speed = 50
 		end
 
-		self:observable_notify(EVENTS.STATE_CHANGED)
+		self:observable_notify(EVENTS.STATE_CHANGED, data)
 	end
 end
 
@@ -80,6 +83,17 @@ function M:update(dt)
 			end
 		end
 	end
+
+	--DEBUG
+	if not self.t then
+		self.t = 2
+	end
+	if (self.t > 0) then
+		self.t = self.t - dt
+	elseif self.state == STATES.WALK then
+		self:set_state(STATES.EVENT)
+	end
+	--ENDDEBUG
 
 	if need_update_pos then
 		self:update_positions()

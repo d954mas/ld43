@@ -1,12 +1,107 @@
+local COMMON = require "libs.common"
+local World = require "world.world"
+local Subscription = require "libs.proxy_subscription"
+local Gooey = require "gooey.gooey"
+
+local hash_string_text = hash("template_btn/text")
+local hash_string_button = hash("template_btn/button")
+local btn_callback = { }
+
+local function fill_button(self, button, button_info)
+  gui.set_text(button[hash_string_text], button_info.text)
+  gui.set_enabled(button[hash_string_button], true)
+end
+
+local function create_button(self, pos, button_info)
+  local btn = gui.clone_tree(self.button_template)
+  gui.set_position(btn[hash_string_button], pos)
+  fill_button(self, btn, button_info)
+  btn = btn[hash_string_button]
+  self.buttons_action[btn] = function(button)
+    local btn_clb = assert(btn_callback[button_info.action], "No action for button: " .. button_info.action)
+    btn_clb(self, button_info, button)
+  end
+  return btn
+end
+
+local function clear_buttons(self)
+  self.buttons_action = { }
+  for _, v in ipairs(self.buttons) do
+    gui.delete_node(v)
+  end
+end
+
+local function set_enabled(self, value)
+  gui.set_enabled(self.icon_node, value)
+  gui.set_enabled(self.text_node, value)
+  self.enabled = value
+end
+
+local function on_update_event(self, event)
+  clear_buttons(self)
+  local pos = self.top_button_pos
+  for i, b in ipairs(event.buttons) do
+    local btn = create_button(self, pos, b)
+    gui.set_id(btn, "template_button_action_" .. i)
+    table.insert(self.buttons, btn)
+    pos.y = pos.y - self.buttons_offset - self.button_size.y
+  end
+  gui.set_text(self.text_node, event.text)
+end
+
+local function on_open_event(self, model, data, event)
+  self.model = model
+  self.event = data
+  set_enabled(self, true)
+  on_update_event(self, data[1])
+  --gui.set_texture(self.icon_node, data.icon)
+end
+
+on_close = function(self)
+  set_enabled(self, false)
+  clear_buttons(self)
+end
+
+btn_callback.debug = function(self, button_info, button)
+  COMMON.LOG.w(button_info.text)
+  on_close(self)
+end
+
+btn_callback.exit = function(self, button_info, button)
+  on_close(self)
+end
+
+btn_callback.open_next = function(self, button_info, button)
+
+end
+
+
+
 function init(self)
+  msg.post(".", "acquire_input_focus")
 	self.icon_node = gui.get_node("event_icon")
   self.text_node = gui.get_node("event_text")
+  self.button_template = gui.get_node("template_btn/button")
+  gui.set_enabled(self.button_template, false)
+  self.button_size = gui.get_size(self.button_template)
+  self.top_button_pos = vmath.vector3(1676, 645, 0)
+  self.buttons_offset = 40
   self.buttons = { }
+  self.buttons_action = { }
+  self.subscription = Subscription()
+  self.subscription:add(World, World.EVENTS.STATE_CHANGED, on_open_event)
+  set_enabled(self, false)
+end
+
+function final(self)
+  self.subscription:unsubscribe()
 end
 
 function update(self, dt)
-	-- Add update code here
-	-- Remove this function if not needed
+  self.subscription:act(self)
+  if not self.enabled then
+    return
+  end
 end
 
 function on_message(self, message_id, message, sender)
@@ -14,19 +109,23 @@ function on_message(self, message_id, message, sender)
 	-- Remove this function if not needed
 end
 
+local function update_button(button)
+	if button.pressed_now then
+		--gui.play_flipbook(button.node, hash("button_pressed"))
+	elseif button.released_now then
+		--gui.play_flipbook(button.node, hash("button_normal"))
+	elseif not button.pressed and button.over_now then
+		--gui.play_flipbook(button.node, hash("button_over"))
+	elseif not button.pressed and button.out_now then
+		--gui.play_flipbook(button.node, hash("button_normal"))
+	end
+end
+
 function on_input(self, action_id, action)
-	-- Add input-handling code here
-	-- Remove this function if not needed
-end
-
-
-
-local function on_open_event(self, event)
-
-end
-
-local function on_close(self)
-  for _, v in ipairs(self.buttons) do
-    gui.delete_node(v)
+  if not self.enabled then
+    return
+  end
+  for _, btn in ipairs(self.buttons) do
+    Gooey.button(gui.get_id(btn), action_id, action, self.buttons_action[btn], update_button)
   end
 end

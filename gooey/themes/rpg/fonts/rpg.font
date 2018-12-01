@@ -1,6 +1,6 @@
 font: "/gooey/themes/rpg/fonts/alagard.ttf"
 material: "/builtins/fonts/font.material"
-size: 16
+size: 32
 antialias: 0
 alpha: 1.0
 outline_alpha: 0.0
