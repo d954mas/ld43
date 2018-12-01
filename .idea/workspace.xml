@@ -3,12 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="5f556a55-332e-4a71-9fea-121fa984465c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/init.collection" beforeDir="false" afterPath="$PROJECT_DIR$/init.collection" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/render/my.render" beforeDir="false" afterPath="$PROJECT_DIR$/render/my.render" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/render/my.render_script" beforeDir="false" afterPath="$PROJECT_DIR$/render/my.render_script" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scenes/game/game.collection" beforeDir="false" afterPath="$PROJECT_DIR$/scenes/game/game.collection" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scenes/game/go/character/character.collection" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/scenes/game/go/character/character.go" beforeDir="false" afterPath="$PROJECT_DIR$/scenes/game/go/character/character.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scenes/game/go/scroll_background.script" beforeDir="false" afterPath="$PROJECT_DIR$/scenes/game/go/scroll_background.script" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/world/world.lua" beforeDir="false" afterPath="$PROJECT_DIR$/world/world.lua" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -48,27 +44,18 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="lua" value="3135" />
+          <entry key="lua" value="3230" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="lua" value="6" />
+          <entry key="lua" value="7" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/scenes/game/go/character/character.script">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="45" selection-start-line="7" selection-start-column="45" selection-end-line="7" selection-end-column="45" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/world/character.lua">
           <provider selected="true" editor-type-id="text-editor">
@@ -108,8 +95,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/world/world.lua">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1666">
-              <caret line="98" column="29" selection-start-line="98" selection-start-column="29" selection-end-line="98" selection-end-column="29" />
+            <state relative-caret-position="107">
+              <caret line="69" column="59" selection-start-line="69" selection-start-column="59" selection-end-line="69" selection-end-column="59" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/scenes/game/go/scroll_background.script">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="12" column="33" selection-start-line="12" selection-start-column="33" selection-end-line="12" selection-end-column="33" />
             </state>
           </provider>
         </entry>
@@ -123,11 +119,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/render/my.render_script">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="66" column="55" lean-forward="true" selection-start-line="66" selection-start-column="55" selection-end-line="66" selection-end-column="55" />
+            <state relative-caret-position="-306">
+              <caret line="66" column="55" selection-start-line="66" selection-start-column="55" selection-end-line="66" selection-end-column="55" />
             </state>
           </provider>
         </entry>
@@ -163,6 +159,7 @@
     <findStrings>
       <find>set_state</find>
       <find>self.po</find>
+      <find>time</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -171,13 +168,13 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/scenes/game/go/scroll_background.script" />
         <option value="$PROJECT_DIR$/scenes/game/go/character/character.script" />
         <option value="$PROJECT_DIR$/scenes/game/game_scene.lua" />
-        <option value="$PROJECT_DIR$/world/world.lua" />
         <option value="$PROJECT_DIR$/world/character.lua" />
         <option value="$PROJECT_DIR$/world/characters.lua" />
         <option value="$PROJECT_DIR$/render/my.render_script" />
+        <option value="$PROJECT_DIR$/world/world.lua" />
+        <option value="$PROJECT_DIR$/scenes/game/go/scroll_background.script" />
       </list>
     </option>
   </component>
@@ -266,12 +263,12 @@
       <workItem from="1543649019293" duration="596000" />
       <workItem from="1543667429038" duration="4197000" />
       <workItem from="1543674015265" duration="7680000" />
-      <workItem from="1543682471973" duration="638000" />
+      <workItem from="1543682471973" duration="1387000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13111000" />
+    <option name="totallyTimeSpent" value="13860000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -360,13 +357,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/scenes/game/go/scroll_background.script">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="35" selection-start-column="35" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/images/characters/characters.atlas">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -405,13 +395,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/world/world.lua">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1666">
-          <caret line="98" column="29" selection-start-line="98" selection-start-column="29" selection-end-line="98" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/world/characters.lua">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
@@ -435,8 +418,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/render/my.render_script">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="66" column="55" lean-forward="true" selection-start-line="66" selection-start-column="55" selection-end-line="66" selection-end-column="55" />
+        <state relative-caret-position="-306">
+          <caret line="66" column="55" selection-start-line="66" selection-start-column="55" selection-end-line="66" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/world/world.lua">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="107">
+          <caret line="69" column="59" selection-start-line="69" selection-start-column="59" selection-end-line="69" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scenes/game/go/scroll_background.script">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="12" column="33" selection-start-line="12" selection-start-column="33" selection-end-line="12" selection-end-column="33" />
         </state>
       </provider>
     </entry>

@@ -25,8 +25,9 @@ function M:initialize()
 	self.STATES = STATES
 	self.state = STATES.WALK
 	self:set_observable_events(self.EVENTS)
-	self.movement_speed = 100
+	self.movement_speed = 50
 	self.time = 24 * 60 --minutes
+	self.position = 0
 	self.max_time = self.time
 	---@type Character[]
 	self.characters = {Character(CHARACTERS[1],self),
@@ -65,6 +66,9 @@ function M:set_state(state)
 end
 
 function M:update(dt)
+    if self.state == STATES.WALK then
+        self.position = self.position + self.movement_speed * dt
+    end
 	local need_update_pos = false
 	for i=1, 5 do
 		local char = self.characters[i]

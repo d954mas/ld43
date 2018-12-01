@@ -9,7 +9,8 @@ function init(self)
 end
 
 function update(self, dt)
-    self.pos.x = self.pos.x - WORLD.movement_speed * dt * self.movement_scale
+   -- self.pos.x = self.pos.x - WORLD.movement_speed * dt * self.movement_scale
+    self.pos.x = - WORLD.position
     if self.max_value ~= 0 and -self.pos.x > self.max_value then
         self.pos.x = - self.max_value
     end
