@@ -20,6 +20,9 @@ function Scene:initialize()
 end
 
 function Scene:on_show(input)
+   -- WORLD:set_state(WORLD.STATES.EVENT)
+  --  local character = WORLD:get_character(1)
+    --character:set_state(character.STATES.DYING)
 end
 
 function Scene:init(go_self)

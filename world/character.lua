@@ -8,11 +8,14 @@ local M = COMMON.class("Character")
 M:include(Observable)
 local EVENTS = {
     PLAY_ANIMATION = "PLAY_ANIMATION",
-    STATE_CHANGED = "STATE_CHANGED"
+    STATE_CHANGED = "STATE_CHANGED",
+    POSITION_CHANGED = "POSITION_CHANGED"
 }
 local STATES = {
     STOP = "STOP",
-    WALKING = "WALKING"
+    WALKING = "WALKING",
+    DYING = "DYING",
+    DIE = "DIE"
 }
 
 ---@param world World
@@ -32,12 +35,13 @@ function M:initialize(art, world)
             self:set_state(STATES.WALKING)
         end
     end))
+    self.position = 0
 end
 
 function M:set_state(state)
-    assert(STATES[state])
-    COMMON.LOG.w("state changed from:" .. self.state .. " " .. state)
+    assert(STATES[state], "unknown state:" .. state)
     if self.state ~= state then
+        COMMON.LOG.w("state changed from:" .. self.state .. " " .. state)
         self.state = state
         self:observable_notify(self.EVENTS.STATE_CHANGED)
     end
@@ -50,7 +54,15 @@ function M:play_animation()
 end
 
 --update animation or other actions if needed
-function M:update(dt, no_save)
+function M:update(dt)
+    if self.state == STATES.DYING or self.state == STATES.DIE then
+        return
+    end
+end
+
+function M:set_position(x)
+    self.position = x
+    self:observable_notify(self.EVENTS.POSITION_CHANGED)
 end
 
 function M:dispose()
