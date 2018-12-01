@@ -19,12 +19,14 @@ local STATES = {
 }
 
 ---@param world World
-function M:initialize(art, world)
+---@param data CharacterData
+function M:initialize(data, world)
+    ---@type CharacterData
+    self.data =assert(data)
+    self.world = assert(world)
     self.EVENTS = EVENTS
     self.STATES = STATES
-    self.world = world
     self:set_observable_events(self.EVENTS)
-    self.art = assert(art)
     self.state = STATES.STOP
     self.subscription = ComplexSubscription()
     self.subscription:add(self.world:register_observer(self.world.EVENTS.STATE_CHANGED, function()

@@ -1,6 +1,7 @@
 local COMMON = require "libs.common"
 local Observable = require "libs.observable_mixin"
 local Character = require "world.character"
+local CHARACTERS = require "world.characters"
 local TAG = "World"
 
 local CHAR_POSITIONS = {
@@ -27,11 +28,11 @@ function M:initialize()
 	self.movement_speed = 100
 	self.time = 24 * 60 --minutes
 	---@type Character[]
-	self.characters = {Character("char_1",self),
-	Character("char_2",self),
-	Character("char_3",self),
-	Character("char_4",self),
-	Character("char_5",self)}
+	self.characters = {Character(CHARACTERS[1],self),
+	Character(CHARACTERS[2],self),
+	Character(CHARACTERS[3],self),
+	Character(CHARACTERS[4],self),
+	Character(CHARACTERS[5],self)}
 	self:update_positions()
 end
 

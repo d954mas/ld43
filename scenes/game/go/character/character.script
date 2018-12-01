@@ -13,7 +13,7 @@ function init(self)
     self.position = go.get_position()
 	self.char_model = WORLD:get_character(self.slot)
     self.subscription = Subscription()
-	sprite.play_flipbook("#sprite_character",self.char_model.art)
+	sprite.play_flipbook("#sprite_character",self.char_model.data.art)
     self.subscription:add(self.char_model,self.char_model.EVENTS.STATE_CHANGED, function()
         go.animate("#sprite_character", "tint", go.PLAYBACK_ONCE_FORWARD, vmath.vector4(1, 1, 1, 0), go.EASING_LINEAR, 1,
         0, function() COMMON.LOG.w("hero die") self.char_model:set_state(self.char_model.STATES.DIE) end)
