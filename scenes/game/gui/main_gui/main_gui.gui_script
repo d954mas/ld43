@@ -1,0 +1,20 @@
+local WORLD = require "world.world"
+
+function set_fill_angle(node, value)
+  local v = math.max(0, math.min(360 * value, 360))
+  gui.set_fill_angle(node, v)
+end
+
+function init(self)
+	self.time_pie = gui.get_node("time_pie")
+  set_fill_angle(self.time_pie, 1)
+end
+
+function update(self, dt)
+	set_fill_angle(self.time_pie, WORLD.time / WORLD.max_time)
+end
+
+function on_message(self, message_id, message, sender)
+	-- Add message-handling code here
+	-- Remove this function if not needed
+end
