@@ -192,7 +192,7 @@ embedded_instances {
   "  }\n"
   "  properties {\n"
   "    id: \"movement_scale\"\n"
-  "    value: \"1.0\"\n"
+  "    value: \"11.0\"\n"
   "    type: PROPERTY_TYPE_NUMBER\n"
   "  }\n"
   "  properties {\n"
