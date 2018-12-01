@@ -53,6 +53,14 @@ instances {
     z: 0.0
     w: 1.0
   }
+  component_properties {
+    id: "character"
+    properties {
+      id: "slot"
+      value: "2.0"
+      type: PROPERTY_TYPE_NUMBER
+    }
+  }
   scale3 {
     x: 1.0
     y: 1.0
@@ -72,6 +80,14 @@ instances {
     y: 0.0
     z: 0.0
     w: 1.0
+  }
+  component_properties {
+    id: "character"
+    properties {
+      id: "slot"
+      value: "5.0"
+      type: PROPERTY_TYPE_NUMBER
+    }
   }
   scale3 {
     x: 1.0
@@ -93,6 +109,14 @@ instances {
     z: 0.0
     w: 1.0
   }
+  component_properties {
+    id: "character"
+    properties {
+      id: "slot"
+      value: "3.0"
+      type: PROPERTY_TYPE_NUMBER
+    }
+  }
   scale3 {
     x: 1.0
     y: 1.0
@@ -112,6 +136,14 @@ instances {
     y: 0.0
     z: 0.0
     w: 1.0
+  }
+  component_properties {
+    id: "character"
+    properties {
+      id: "slot"
+      value: "4.0"
+      type: PROPERTY_TYPE_NUMBER
+    }
   }
   scale3 {
     x: 1.0
