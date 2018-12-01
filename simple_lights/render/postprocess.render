@@ -1,4 +1,4 @@
-script: "/render/my.render_script"
+script: "/simple_lights/render/postprocess.render_script"
 materials {
   name: "quad"
   material: "/simple_lights/materials/quad.material"
