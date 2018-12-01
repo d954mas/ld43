@@ -47,6 +47,7 @@ end
 
 function Scene:on_input(go_self, action_id, action, sender)
    self.input_receiver:on_input(go_self,action_id,action,sender)
+    WORLD:on_input(action_id,action)
 end
 
 function Scene:load(co)

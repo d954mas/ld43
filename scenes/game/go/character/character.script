@@ -5,7 +5,8 @@ go.property("slot", 1)
 
 local function update_position(self)
     COMMON.LOG.w("POSITION CHANGED")
-    self.position.x = self.char_model.position
+    self.position.x = self.char_model.rect[1]
+    self.position.y = self.char_model.rect[2]
     go.set_position(self.position)
 end
 

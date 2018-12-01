@@ -5,7 +5,7 @@ local CHARACTERS = require "world.characters"
 local TAG = "World"
 
 local CHAR_POSITIONS = {
-1280,980,680,380,80
+1400,1080,780,480,180
 }
 
 ---@class World:Observable
@@ -89,6 +89,20 @@ end
 
 function M:get_character(slot)
 	return self.characters[slot]
+end
+
+function M:on_input(action_id, action)
+	if action_id == COMMON.HASHES.INPUT_TOUCH and action.pressed then
+		for i=1, 5 do
+			local char = self.characters[i]
+			if char then
+				if char:is_on_character(action.x, action.y) then
+					COMMON.w("character selected:" .. i)
+					return
+				end
+			end
+		end
+	end
 end
 
 

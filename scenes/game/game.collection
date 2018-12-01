@@ -24,7 +24,7 @@ instances {
   prototype: "/scenes/game/go/character/character.go"
   position {
     x: 1371.667
-    y: 0.0
+    y: 630.0
     z: 0.05
   }
   rotation {
@@ -44,7 +44,7 @@ instances {
   prototype: "/scenes/game/go/character/character.go"
   position {
     x: 991.667
-    y: 0.0
+    y: 631.667
     z: 0.04
   }
   rotation {
@@ -72,7 +72,7 @@ instances {
   prototype: "/scenes/game/go/character/character.go"
   position {
     x: -100.0
-    y: 0.0
+    y: 631.667
     z: 0.0
   }
   rotation {
@@ -100,7 +100,7 @@ instances {
   prototype: "/scenes/game/go/character/character.go"
   position {
     x: 611.667
-    y: 0.0
+    y: 631.667
     z: 0.02
   }
   rotation {
@@ -128,7 +128,7 @@ instances {
   prototype: "/scenes/game/go/character/character.go"
   position {
     x: 240.0
-    y: 0.0
+    y: 631.667
     z: 0.01
   }
   rotation {
@@ -563,8 +563,8 @@ embedded_instances {
   children: "char_5"
   data: ""
   position {
-    x: 126.0
-    y: 379.0
+    x: 0.0
+    y: 0.0
     z: 0.0
   }
   rotation {

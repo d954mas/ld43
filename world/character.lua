@@ -2,6 +2,11 @@ local COMMON = require "libs.common"
 local Observable = require "libs.observable_mixin"
 local ComplexSubscription = require "libs.complex_subscription"
 
+local SCALE = 0.6
+local CHAR_Y = 631
+local SIZE = {
+    350 * SCALE, 500 * SCALE
+}
 
 ---@class Character:Observable
 local M = COMMON.class("Character")
@@ -37,7 +42,7 @@ function M:initialize(data, world)
             self:set_state(STATES.WALKING)
         end
     end))
-    self.position = 0
+    self.rect = {0,CHAR_Y,SIZE[1],SIZE[2]} --x, y, w, h origin in center
 end
 
 function M:set_state(state)
@@ -47,12 +52,21 @@ function M:set_state(state)
         self.state = state
         self:observable_notify(self.EVENTS.STATE_CHANGED)
     end
-
 end
 
 function M:play_animation()
-
     self:observable_notify(self.EVENTS.PLAY_ANIMATION)
+end
+
+function M:is_on_character(x,y)
+    x = x/ SCALE
+    y = y/ SCALE
+    local h_w = self.rect[3]/2
+    local h_h = self.rect[4]/2
+    if x>= self.rect[1] - h_w and x<= self.rect[1] + h_w
+            and y>= self.rect[2] - h_h and y<= self.rect[2] + h_h then
+        return true
+    end
 end
 
 --update animation or other actions if needed
@@ -63,7 +77,7 @@ function M:update(dt)
 end
 
 function M:set_position(x)
-    self.position = x
+    self.rect[1] = x
     self:observable_notify(self.EVENTS.POSITION_CHANGED)
 end
 
