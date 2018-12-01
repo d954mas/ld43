@@ -1,0 +1,33 @@
+local WORLD = require "world.world"
+local Subscription = require "libs.proxy_subscription"
+go.property("slot", 1)
+
+function init(self)
+	self.char_model = WORLD:get_character(self.slot)
+    self.subscription = Subscription()
+	sprite.play_flipbook("#sprite_character",self.char_model.art)
+end
+
+function final(self)
+	-- Add finalization code here
+	-- Remove this function if not needed
+end
+
+function update(self, dt)
+    self.subscription:act(self)
+end
+
+function on_message(self, message_id, message, sender)
+	-- Add message-handling code here
+	-- Remove this function if not needed
+end
+
+function on_input(self, action_id, action)
+	-- Add input-handling code here
+	-- Remove this function if not needed
+end
+
+function on_reload(self)
+	-- Add reload-handling code here
+	-- Remove this function if not needed
+end

@@ -1,0 +1,30 @@
+images {
+  image: "/assets/images/backgrounds/clouds/cloud1.png"
+}
+images {
+  image: "/assets/images/backgrounds/clouds/cloud2.png"
+}
+images {
+  image: "/assets/images/backgrounds/clouds/cloud3.png"
+}
+images {
+  image: "/assets/images/backgrounds/clouds/cloud4.png"
+}
+images {
+  image: "/assets/images/backgrounds/clouds/cloud5.png"
+}
+images {
+  image: "/assets/images/backgrounds/clouds/cloud6.png"
+}
+images {
+  image: "/assets/images/backgrounds/clouds/cloud7.png"
+}
+images {
+  image: "/assets/images/backgrounds/clouds/cloud8.png"
+}
+images {
+  image: "/assets/images/backgrounds/clouds/cloud9.png"
+}
+margin: 0
+extrude_borders: 0
+inner_padding: 0

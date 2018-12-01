@@ -1,0 +1,18 @@
+images {
+  image: "/assets/images/characters/char_1.png"
+}
+images {
+  image: "/assets/images/characters/char_2.png"
+}
+images {
+  image: "/assets/images/characters/char_3.png"
+}
+images {
+  image: "/assets/images/characters/char_4.png"
+}
+images {
+  image: "/assets/images/characters/char_5.png"
+}
+margin: 0
+extrude_borders: 0
+inner_padding: 0
