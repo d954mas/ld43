@@ -5,6 +5,7 @@ local SM = require "Jester.scene_stack"
 local JESTER = require "Jester.jester"
 local WORLD = require "world.world"
 local Subscription = require "libs.proxy_subscription"
+local STEPPER = require "world.stepper"
 
 function Scene:init_input()
     COMMON.input_acquire()
@@ -20,6 +21,7 @@ function Scene:initialize()
 end
 
 function Scene:on_show(input)
+    sound.play("/sounds#wind_ambient", {gain = 0.4} )
    -- WORLD:set_state(WORLD.STATES.EVENT)
   --  local character = WORLD:get_character(1)
     --character:set_state(character.STATES.DYING)
@@ -36,6 +38,9 @@ end
 function Scene:update(go_self, dt)
     WORLD:update(dt)
     self.subscription:act(go_self)
+    if WORLD.state == WORLD.STATES.WALK then
+        STEPPER:update(dt)
+    end
 end
 
 function Scene:show_out(co)
