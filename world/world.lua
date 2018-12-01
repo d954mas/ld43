@@ -27,6 +27,7 @@ function M:initialize()
 	self:set_observable_events(self.EVENTS)
 	self.movement_speed = 100
 	self.time = 24 * 60 --minutes
+	self.max_time = self.time
 	---@type Character[]
 	self.characters = {Character(CHARACTERS[1],self),
 	Character(CHARACTERS[2],self),
