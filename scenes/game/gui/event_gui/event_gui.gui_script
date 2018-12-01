@@ -1,11 +1,7 @@
 function init(self)
-	-- Add initialization code here
-	-- Remove this function if not needed
-end
-
-function final(self)
-	-- Add finalization code here
-	-- Remove this function if not needed
+	self.icon_node = gui.get_node("event_icon")
+  self.text_node = gui.get_node("event_text")
+  self.buttons = { }
 end
 
 function update(self, dt)
@@ -23,7 +19,14 @@ function on_input(self, action_id, action)
 	-- Remove this function if not needed
 end
 
-function on_reload(self)
-	-- Add input-handling code here
-	-- Remove this function if not needed
+
+
+local function on_open_event(self, event)
+
+end
+
+local function on_close(self)
+  for _, v in ipairs(self.buttons) do
+    gui.delete_node(v)
+  end
 end

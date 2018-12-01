@@ -1,6 +1,6 @@
 local WORLD = require "world.world"
 
-function set_fill_angle(node, value)
+local function set_fill_angle(node, value)
   local v = math.max(0, math.min(360 * value, 360))
   gui.set_fill_angle(node, v)
 end
