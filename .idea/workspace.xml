@@ -3,8 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="5f556a55-332e-4a71-9fea-121fa984465c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scenes/game/go/scroll_background.script" beforeDir="false" afterPath="$PROJECT_DIR$/scenes/game/go/scroll_background.script" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/world/world.lua" beforeDir="false" afterPath="$PROJECT_DIR$/world/world.lua" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/render/my.render_script" beforeDir="false" afterPath="$PROJECT_DIR$/render/my.render_script" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scenes/game/go/character/character.script" beforeDir="false" afterPath="$PROJECT_DIR$/scenes/game/go/character/character.script" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/simple_lights/materials/multiply.fp" beforeDir="false" afterPath="$PROJECT_DIR$/simple_lights/materials/multiply.fp" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -44,11 +45,13 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="lua" value="3230" />
+          <entry key="PLAIN_TEXT" value="23" />
+          <entry key="lua" value="3258" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
+          <entry key="PLAIN_TEXT" value="2" />
           <entry key="lua" value="7" />
         </counts>
       </usages-collector>
@@ -56,24 +59,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/world/character.lua">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1071">
-              <caret line="63" column="26" selection-start-line="63" selection-start-column="21" selection-end-line="63" selection-end-column="26" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/libs/observable_mixin.lua">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1037">
-              <caret line="61" column="10" selection-start-line="61" selection-start-column="10" selection-end-line="61" selection-end-column="10" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/libs/complex_subscription.lua">
           <provider selected="true" editor-type-id="text-editor">
@@ -101,7 +86,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/scenes/game/go/scroll_background.script">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="102">
@@ -119,11 +104,25 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/render/my.render_script">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-306">
-              <caret line="66" column="55" selection-start-line="66" selection-start-column="55" selection-end-line="66" selection-end-column="55" />
+            <state relative-caret-position="127">
+              <caret line="146" column="58" lean-forward="true" selection-start-line="146" selection-start-column="58" selection-end-line="147" selection-end-column="46" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/simple_lights/materials/multiply_quad.material">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/simple_lights/materials/multiply.fp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="5" column="22" lean-forward="true" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -160,6 +159,7 @@
       <find>set_state</find>
       <find>self.po</find>
       <find>time</find>
+      <find>get_window_width</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -172,9 +172,10 @@
         <option value="$PROJECT_DIR$/scenes/game/game_scene.lua" />
         <option value="$PROJECT_DIR$/world/character.lua" />
         <option value="$PROJECT_DIR$/world/characters.lua" />
-        <option value="$PROJECT_DIR$/render/my.render_script" />
         <option value="$PROJECT_DIR$/world/world.lua" />
         <option value="$PROJECT_DIR$/scenes/game/go/scroll_background.script" />
+        <option value="$PROJECT_DIR$/simple_lights/materials/multiply.fp" />
+        <option value="$PROJECT_DIR$/render/my.render_script" />
       </list>
     </option>
   </component>
@@ -221,6 +222,17 @@
             <path>
               <item name="LD43_2" type="b2602c69:ProjectViewProjectNode" />
               <item name="LD43_2" type="462c0819:PsiDirectoryNode" />
+              <item name="simple_lights" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="LD43_2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="LD43_2" type="462c0819:PsiDirectoryNode" />
+              <item name="simple_lights" type="462c0819:PsiDirectoryNode" />
+              <item name="materials" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="LD43_2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="LD43_2" type="462c0819:PsiDirectoryNode" />
               <item name="world" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -263,18 +275,18 @@
       <workItem from="1543649019293" duration="596000" />
       <workItem from="1543667429038" duration="4197000" />
       <workItem from="1543674015265" duration="7680000" />
-      <workItem from="1543682471973" duration="1387000" />
+      <workItem from="1543682471973" duration="2553000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13860000" />
+    <option name="totallyTimeSpent" value="15026000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -290,7 +302,7 @@
       <window_info anchor="bottom" id="LuaCheck" order="7" />
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.3289689" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Version Control" order="10" visible="true" weight="0.3289689" />
+      <window_info anchor="bottom" id="Version Control" order="10" visible="true" weight="0.3289689" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -416,13 +428,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/render/my.render_script">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-306">
-          <caret line="66" column="55" selection-start-line="66" selection-start-column="55" selection-end-line="66" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/world/world.lua">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="107">
@@ -434,6 +439,23 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="12" column="33" selection-start-line="12" selection-start-column="33" selection-end-line="12" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/simple_lights/materials/multiply_quad.material">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/simple_lights/materials/multiply.fp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="22" lean-forward="true" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/render/my.render_script">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="127">
+          <caret line="146" column="58" lean-forward="true" selection-start-line="146" selection-start-column="58" selection-end-line="147" selection-end-column="46" />
         </state>
       </provider>
     </entry>

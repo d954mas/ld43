@@ -29,7 +29,7 @@ end
 local IDENTITY = vmath.matrix4()
 
 local BLACK = vmath.vector4(0)
-local AMBIENT_LIGHT = vmath.vector4(0.1, 0.1, 0.1, 1.0)
+local AMBIENT_LIGHT = vmath.vector4(1, 1, 1, 1.0)
 
 local function create_render_target(name)
     local color_params = { 
@@ -145,6 +145,8 @@ local function multiply_to_quad(self, rt0, rt1)
     render.enable_material(hash("multiply_quad"))
     render.enable_texture(0, rt0, render.BUFFER_COLOR_BIT)
     render.enable_texture(1, rt1, render.BUFFER_COLOR_BIT)
+    local constants = render.constant_buffer()
+    constants.resolution = vmath.vector4(1920, 1080, 1, 1)
     render.draw(self.quad_pred)
     render.disable_texture(0, rt0)
     render.disable_texture(1, rt1)
