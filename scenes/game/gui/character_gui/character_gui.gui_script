@@ -4,15 +4,23 @@ local Subscription = require "libs.proxy_subscription"
 local World = require "world.world"
 
 local function set_character_description(self, character)
-  gui.set_text(self.description_text, "description")
+  gui.set_text(self.description_text, character.data.descr)
 end
 
 local function set_character_positive(self, character)
-  gui.set_text(self.positive_text, "positive")
+  local str = "Позитивные черты: "
+  for i_, v in ipairs(character.data.positive) do
+    str = str .. "\n+ " .. v
+  end
+  gui.set_text(self.positive_text, str)
 end
 
 local function set_character_negative(self, character)
-  gui.set_text(self.negative_text, "negative")
+  local str = "Негативные черты: "
+  for i_, v in ipairs(character.data.negative) do
+    str = str .. "\n- " .. v
+  end
+  gui.set_text(self.negative_text, str)
 end
 
 local function update_character_text(self, character)

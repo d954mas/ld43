@@ -2,6 +2,7 @@ local COMMON = require "libs.common"
 local World = require "world.world"
 local Subscription = require "libs.proxy_subscription"
 local Gooey = require "gooey.gooey"
+local JESTER = require "Jester.jester"
 
 local hash_string_text = hash("template_btn/text")
 local hash_string_button = hash("template_btn/button")
@@ -49,7 +50,7 @@ local function create_button(self, pos, button_info)
   fill_button(self, btn, button_info)
   local met = gui.get_text_metrics_from_node(btn[hash_string_text])
   local size = gui.get_size(btn[hash_string_button])
-  size.y = math.max(met.height, size.y)
+  size.y = math.max(met.height + 35, size.y)
   gui.set_size(btn[hash_string_button], size)
   btn = btn[hash_string_button]
   self.buttons_action[btn] = function(button)
@@ -113,6 +114,10 @@ btn_callback.close = function(self, button_info, button)
   COMMON.LOG.w(button_info.text)
   on_close(self)
   World:set_state(World.STATES.WALK)
+end
+
+btn_callback.restart = function(self, button_info, button)
+  JESTER.reload()
 end
 
 btn_callback.next = function(self, button_info, button)

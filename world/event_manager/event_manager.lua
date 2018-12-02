@@ -5,7 +5,9 @@ local LUME = require "libs.lume"
 local common_events = {
 	require("world.event_manager.events.event_3"),
 	require("world.event_manager.events.event_4"),
-	require("world.event_manager.events.event_5")
+	require("world.event_manager.events.event_5"),
+	require("world.event_manager.events.event_6"),
+	require("world.event_manager.events.event_7")
 }
 
 local start_events = {
