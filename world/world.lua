@@ -16,8 +16,8 @@ local START_TICKS = 420
 local BG_SIZE = 14254
 local SPEED = BG_SIZE/TOTAL_TICKS
 local ON_CHARACTER_DEAD_TIME = 45
-local TIME_TO_EVENT = 60/4
-local DT_SCALE = 1
+local TIME_TO_EVENT = 40/4
+local DT_SCALE = 2
 
 ---@class World:Observable
 local M = COMMON.class("World")
