@@ -12,18 +12,18 @@ function init(self)
 end
 
 function update(self, dt)
-    self.movement = self.movement + self.speed * dt
-   -- self.pos.x = self.pos.x - WORLD.movement_speed * dt * self.movement_scale
-    if self.max_value ~= 0 and -self.pos.x > self.max_value then
-        self.pos.x = -self.max_value
+    -- self.pos.x = self.pos.x - WORLD.movement_speed * dt * self.movement_scale
+    
+    self.pos.x = -WORLD.position * self.movement_scale + self.additional_pos + WORLD.position + self.movement
+    if self.max_value ~= 0 and WORLD.position > self.max_value then
+        self.pos.x = -self.max_value * self.movement_scale + self.additional_pos + self.max_value + self.movement
     end
 
-    self.pos.x = - WORLD.position * self.movement_scale + self.additional_pos + WORLD.position + self.movement
     if self.looped and self.start_loop_value ~= 0 then
-        if -self.pos.x > self.start_loop_value then
-            self.additional_pos = self.additional_pos + self.start_loop_value
-        end    
-    end    
+    if -self.pos.x > self.start_loop_value then
+        self.additional_pos = self.additional_pos + self.start_loop_value
+    end
+    end
 
     go.set_position(self.pos)
-end
+    end

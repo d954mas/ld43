@@ -17,7 +17,7 @@ local BG_SIZE = 14254
 local SPEED = BG_SIZE/TOTAL_TICKS
 local ON_CHARACTER_DEAD_TIME = 45
 local TIME_TO_EVENT = 60/4
-local DT_SCALE = 10
+local DT_SCALE = 1
 
 ---@class World:Observable
 local M = COMMON.class("World")
@@ -47,7 +47,7 @@ function M:initialize()
 	self.food = 10
 	self.hungry = 0
 	self.position = 0
-	self.path_lenght = 14254
+	self.path_lenght = 14254 - 1920
 	self.max_time = self.time
 	self.food_tick_dt = 0
 	---@type Character[]

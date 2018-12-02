@@ -1,0 +1,6 @@
+images {
+  image: "/assets/images/backgrounds/backround_close_trees/row-1-col-2.png"
+}
+margin: 0
+extrude_borders: 0
+inner_padding: 0

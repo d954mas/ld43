@@ -3,7 +3,7 @@ local Observable = require "libs.observable_mixin"
 local ComplexSubscription = require "libs.complex_subscription"
 
 local SCALE = 0.6
-local CHAR_Y = 631
+local CHAR_Y = 300
 local SIZE = {
     350 * SCALE, 500 * SCALE
 }

@@ -1,0 +1,6 @@
+images {
+  image: "/assets/images/backgrounds/background_gradient/row-1-col-3.png"
+}
+margin: 0
+extrude_borders: 0
+inner_padding: 0
