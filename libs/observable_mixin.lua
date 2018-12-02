@@ -71,6 +71,7 @@ function M:clear()
 	for i,v in pairs(self._observable_events_observers) do
 		LUME.clearp(v)
 	end
+	self._observable_events = nil
 end
 
 

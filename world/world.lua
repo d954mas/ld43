@@ -21,7 +21,8 @@ local STATES = {
 	WALK = "WALK",
 	EVENT = "EVENT",
 	STOP = "STOP",
-	HERO_CHOOSE = "HERO_CHOOSE"
+	HERO_CHOOSE = "HERO_CHOOSE",
+	GAME_OVER = "GAME_OVER"
 }
 
 function M:initialize()
@@ -66,8 +67,24 @@ function M:update_positions(force)
 	end
 end
 
+function M:check_state()
+	local characters = 0
+	for i=1,5 do
+		local char = self.characters[i]
+		if char then
+			characters = characters + 1
+		end
+	end
+	if characters == 0 then
+		self:set_state(STATES.GAME_OVER)
+	end
+end
+
 function M:set_state(state, state_data)
 	assert(STATES[state])
+	if self.state == STATES.GAME_OVER then
+		return
+	end
 	if self.state ~= state then
 		COMMON.LOG.w("state changed from:" ..  self.state .. " to " .. state )
 		self.state = state
@@ -90,6 +107,11 @@ function M:set_state(state, state_data)
 end
 
 function M:update(dt)
+	self:check_state()
+	if self.state == STATES.GAME_OVER then
+		return
+	end
+
     if self.state == STATES.WALK then
         self.position = self.position + self.movement_speed * dt
     end
@@ -162,8 +184,6 @@ end
 
 function M:on_input(action_id, action)
 	if action_id == COMMON.HASHES.INPUT_TOUCH and action.pressed then
-		self:change_food(-4)
-		self:get_character(1):die()
 		for i=1, 5 do
 			local char = self.characters[i]
 			if char then
@@ -179,6 +199,12 @@ function M:on_input(action_id, action)
 			end
 		end
 	end
+end
+
+function M:dispose()
+	self:clear()
+	self:initialize()
+	self.t = nil
 end
 
 

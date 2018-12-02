@@ -17,7 +17,6 @@ function Scene:initialize()
     ProxyScene.initialize(self, "GameScene", "/game#proxy", "game:/scene_controller")
     self.msg_receiver = COMMON.MSG()
     self.subscription = Subscription()
- --   self.subscription:add(WORLD, WORLD.EVENTS.ENEMY_DEAD, function() end)
 end
 
 function Scene:on_show(input)
@@ -29,10 +28,18 @@ end
 
 function Scene:init(go_self)
     self:init_input()
+    msg.post("/game_over_gui#game_over_gui", COMMON.HASHES.MSG_DISABLE)
+    self.subscription:add(WORLD, WORLD.EVENTS.STATE_CHANGED, function()
+        if WORLD.state == WORLD.STATES.GAME_OVER then
+            msg.post("/game_over_gui#game_over_gui", COMMON.HASHES.MSG_ENABLE)
+        end
+    end)
 end
 
 function Scene:final(go_self)
+	self.subscription:unsubscribe()
     COMMON.input_release()
+    WORLD:dispose()
 end
 
 function Scene:update(go_self, dt)
