@@ -45,7 +45,7 @@ local e = function(world)
         },
         {
           text = "Бежать скорее к берегу, пока трещины не дошли до вас",
-          action = "close"
+          action = "close",
           lost = {
             character = char:get_id()
           }
