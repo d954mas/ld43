@@ -1,15 +1,22 @@
 local e = {
   {
     icon = "1",
-    text = "first event",
+    text = "...",
     buttons = {
       {
-        text = "temp",
-        action = "debug"
-      },
+        text = "Дальше",
+        action = "next",
+        value = 2
+      }
+    }
+  },
+  {
+    icon = "1",
+    text = "Что это за место? Как мы здесь оказались?",
+    buttons = {
       {
-        text = "temp_2",
-        action = "debug"
+        text = "Дальше",
+        action = "close"
       }
     }
   }

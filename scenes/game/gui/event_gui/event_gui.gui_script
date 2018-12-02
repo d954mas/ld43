@@ -29,6 +29,7 @@ local function clear_buttons(self)
   for _, v in ipairs(self.buttons) do
     gui.delete_node(v)
   end
+  self.buttons = { }
 end
 
 local function set_enabled(self, value)
@@ -71,15 +72,15 @@ btn_callback.debug = function(self, button_info, button)
   World:set_state(World.STATES.WALK)
 end
 
-btn_callback.exit = function(self, button_info, button)
+btn_callback.close = function(self, button_info, button)
+  COMMON.LOG.w(button_info.text)
   on_close(self)
+  World:set_state(World.STATES.WALK)
 end
 
-btn_callback.open_next = function(self, button_info, button)
-
+btn_callback.next = function(self, button_info, button)
+  on_update_event(self, self.event[button_info.value])
 end
-
-
 
 function init(self)
   msg.post(".", "acquire_input_focus")
