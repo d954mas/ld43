@@ -12,7 +12,7 @@ background_color {
 nodes {
   position {
     x: 1531.0
-    y: 661.0
+    y: 670.0
     z: 0.0
     w: 1.0
   }
@@ -29,7 +29,7 @@ nodes {
     w: 1.0
   }
   size {
-    x: 450.0
+    x: 800.0
     y: 350.0
     z: 0.0
     w: 1.0
@@ -171,7 +171,7 @@ nodes {
 nodes {
   position {
     x: 0.0
-    y: -50.0
+    y: -22.0
     z: 0.0
     w: 1.0
   }
@@ -208,7 +208,7 @@ nodes {
   id: "template_btn/text"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
-  pivot: PIVOT_CENTER
+  pivot: PIVOT_N
   outline {
     x: 0.0
     y: 0.0
@@ -230,6 +230,7 @@ nodes {
   outline_alpha: 1.0
   shadow_alpha: 1.0
   overridden_fields: 1
+  overridden_fields: 14
   template_node_child: true
   text_leading: 1.0
   text_tracking: 0.0
