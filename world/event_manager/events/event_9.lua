@@ -25,7 +25,7 @@ local e = function(world)
           text = "Оставить " .. rand_name .. " и продолжить путь",
           action = "close",
           lost = {
-            character = random_char:get_name()
+            character = random_char:get_id()
           }
         } or nil
       }
