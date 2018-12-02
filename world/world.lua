@@ -19,8 +19,8 @@ local START_TICKS = 420
 local BG_SIZE = 14254
 local SPEED = BG_SIZE/TOTAL_TICKS
 local ON_CHARACTER_DEAD_TIME = 45
-local TIME_TO_EVENT = 60/4
-local DT_SCALE = 5
+local TIME_TO_EVENT = 40/4
+local DT_SCALE = 2
 
 ---@class World:Observable
 local M = COMMON.class("World")
@@ -47,7 +47,7 @@ function M:initialize()
 	self.movement_speed = SPEED
 	self.time = START_TICKS
 	self.event_dt = 0
-	self.food = 10
+	self.food = 0
 	self.hungry = 0
 	self.position = 0 --5000
 	self.path_lenght = 14254 - 1920
@@ -210,6 +210,18 @@ function M:update(dt)
 			self:change_food(spend_food)
 			eat = true
 		end
+
+		if (self.event_dt >= 1 and not self.first_tutorial) then
+			local data = self.event_manager:get_next_event(self)
+			self:set_state(STATES.EVENT, data)
+			self.first_tutorial = true
+		elseif (self.event_dt >= 2 and not self.second_tutorial) then
+			local data = self.event_manager:get_next_event(self)
+			self:set_state(STATES.EVENT, data)
+			self.second_tutorial = true
+		end
+
+
 		--wait for hero die before show new event
 		if self.event_dt > TIME_TO_EVENT and not eat then
 			self.event_dt = 0
@@ -225,7 +237,7 @@ function M:update(dt)
 			if char.state == char.STATES.DIE then
 				self.characters[i] = nil
 				need_update_pos = true
-				self.time = self.time + ON_CHARACTER_DEAD_TIME
+				self.time = math.min(self.max_time, self.time + ON_CHARACTER_DEAD_TIME)
 			end
 		end
 	end

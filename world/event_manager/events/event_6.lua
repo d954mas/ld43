@@ -36,6 +36,7 @@ local e = function(world)
           action = "close"
         }
       },
+    },
       {
         text = "Вам выпадает число " .. rand .. ". " .. (robert and "Роберт доволен собой" or rand <= 50 and "Проигрышь! Карты лгать не могут. Получите свою награду." or "Ого, я удивлен. Карты не лгут, получите награду.") ,
         action = "close",
@@ -46,10 +47,15 @@ local e = function(world)
         reward = rand > 50 and {
           time = 50,
           food = 15
+        },
+        buttons = {
+          {
+            text = "Продолжить путь" ,
+            action = "close"
+          }
         }
       }
     }
-  }
 end
 
 return e
