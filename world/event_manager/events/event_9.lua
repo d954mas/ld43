@@ -1,50 +1,32 @@
 local e = function(world)
-  local char = world:get_char_alive("angel") or world:get_random_alive_char()
+  local char = world:get_char_alive("anabel")
+  local random_char = world:get_random_alive_char()
   local name = char and char:get_name() or "CHARACTER_NAME"
+  local rand_name = random_char:get_name()
   return
   {
     {
-      text = "Путники находят скелет, рядом с которым лежат мешок и записка. Видно, что кости перебирали, но мешок завязан на узел и не тронут.",
+      text = "Неожиданно для всех " .. rand_name .. " падает наземь.\n'Аааййй, как больно. Моя нога!'.\nПохоже, путнику требуется помощь.",
       buttons = {
-        {
-          text = "Продолжить путь",
-          action = "close"
-        },
-        {
-          text = "Открыть мешок",
-          action = "next",
-          value = 2
-        },
-        {
-          text = "Прочесть записку",
-          action = "next",
-          value = 3
-        }
-      }
-    },
-    {
-      text = name .. " решается открыть сумку. Мгновенно из сумки на лицо прыгает огромный паук. Путники в ужасе убегают прочь. Но " .. name .. " не бежит." ,
-      buttons = {
-        {
-          text = "Бежать как можно дальше отсюда",
+        char and {
+          text = name .. " может быстрее залечить травму (-10 время)",
           action = "close",
           lost = {
-            character = char:get_id()
+            time = 10
           }
-        }
-      }
-    },
-    {
-      text = "'\nМне нужно бежать, но мешок мешает. Я оставлю его здесь, но в скором времени вернусь. Большая просьба не открывать.'",
-      buttons = {
-        {
-          text = "Открыть сумку",
-          action = "next",
-          value = 2
+        } or {
+          text = "Остаться и дождаться, пока боль пройдет (-25 время)",
+          action = "close",
+          lost = {
+            time = 25
+          }
         },
-        {
-          text = "Пойти дальше",
-          action = "close"
+        world:count_chars() > 1 and {
+          text = "Оставить " .. rand_name .. " и продолжить путь",
+          action = "close",
+          lost = {
+            character = random_char:get_name()
+          }
         }
       }
     }
