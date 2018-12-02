@@ -51,7 +51,7 @@ local function on_update_event(self, event)
 end
 
 local function on_open_event(self, model, data, event)
-  if (model.state ~= model.STATES.EVENT) then
+  if (model.state ~= model.STATES.EVENT or not data) then
     return
   end
   self.model = model
@@ -60,7 +60,7 @@ local function on_open_event(self, model, data, event)
   on_update_event(self, data[1])
 end
 
-on_close = function(self)
+local function on_close(self)
   set_enabled(self, false)
   clear_buttons(self)
 end
@@ -132,4 +132,5 @@ function on_input(self, action_id, action)
   for _, btn in ipairs(self.buttons) do
     Gooey.button(gui.get_id(btn), action_id, action, self.buttons_action[btn], update_button)
   end
+  return true
 end

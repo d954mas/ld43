@@ -1,3 +1,8 @@
+local COMMON = require "libs.common"
+local Gooey = require "gooey.gooey"
+local Subscription = require "libs.proxy_subscription"
+local World = require "world.world"
+
 local function set_character_description(self, character)
   gui.set_text(self.description_text, "description")
 end
@@ -20,38 +25,78 @@ local function set_choose_button_enabled(self, flag)
   gui.set_enabled(self.choose_button, flag)
 end
 
-local function set_character(self, character, choose_callback)
-  update_character_text(self, character)
-  self.choose_callback = choose_callback
-  set_choose_button_enabled(choose_callback)
+local function set_enabled(self, value)
+  gui.set_enabled(self.choose_button, value)
+  gui.set_enabled(self.gui_box, value)
+  self.enabled = value
 end
+
+local function on_close(self)
+  set_enabled(self, false)
+  World:set_state(self.set_character_data.returned_state)
+end
+
+local function set_character(self, model, data, event)
+  if (model.state ~= model.STATES.HERO_CHOOSE) then
+    return
+  end
+  self.set_character_data = data
+  set_enabled(self, true)
+  local character = data.character
+  local choose_callback = data.choose_callback
+  update_character_text(self, character)
+  self.choose_callback = function()
+    on_close(self)
+    if (choose_callback) then
+      choose_callback()
+    end
+  end
+  set_choose_button_enabled(self, choose_callback)
+end
+
+
 
 function init(self)
-	-- Add initialization code here
-	-- Remove this function if not needed
-end
-
-function final(self)
-	-- Add finalization code here
-	-- Remove this function if not needed
+	msg.post(".", "acquire_input_focus")
+  self.gui_box = gui.get_node("gui_box")
+  self.choose_button = gui.get_node("template_btn/button")
+  self.description_text = gui.get_node("description_text")
+  self.negative_text = gui.get_node("negative_text")
+  self.positive_text = gui.get_node("positive_text")
+  set_choose_button_enabled(self, false)
+  self.subscription = Subscription()
+  self.subscription:add(World, World.EVENTS.STATE_CHANGED, set_character)
+  set_enabled(self, false)
 end
 
 function update(self, dt)
-	-- Add update code here
-	-- Remove this function if not needed
+  self.subscription:act(self)
 end
 
-function on_message(self, message_id, message, sender)
-	-- Add message-handling code here
-	-- Remove this function if not needed
+function final(self)
+	self.subscription:unsubscribe()
 end
+
+local function update_button(button)
+	if button.pressed_now then
+		--gui.play_flipbook(button.node, hash("button_pressed"))
+	elseif button.released_now then
+		--gui.play_flipbook(button.node, hash("button_normal"))
+	elseif not button.pressed and button.over_now then
+		--gui.play_flipbook(button.node, hash("button_over"))
+	elseif not button.pressed and button.out_now then
+		--gui.play_flipbook(button.node, hash("button_normal"))
+	end
+end
+
 
 function on_input(self, action_id, action)
-	-- Add input-handling code here
-	-- Remove this function if not needed
-end
-
-function on_reload(self)
-	-- Add input-handling code here
-	-- Remove this function if not needed
+  if not self.enabled then
+    return
+  end
+  local btn = Gooey.button(gui.get_id(self.choose_button), action_id, action, self.choose_callback, update_button)
+  if not btn.over and not gui.pick_node(self.gui_box, action.x, action.y) and action_id == COMMON.HASHES.INPUT_TOUCH and action.pressed then
+    on_close(self)
+  end
+  return true
 end

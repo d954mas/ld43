@@ -13,12 +13,13 @@ local CHAR_POSITIONS = {
 local M = COMMON.class("World")
 M:include(Observable)
 local EVENTS = {
-	STATE_CHANGED = "STATE_CHANGED",
+	STATE_CHANGED = "STATE_CHANGED"
 }
 
 local STATES = {
 	WALK = "WALK",
-	EVENT = "EVENT"
+	EVENT = "EVENT",
+	HERO_CHOOSE = "HERO_CHOOSE"
 }
 
 function M:initialize()
@@ -51,7 +52,7 @@ function M:update_positions()
 	end
 end
 
-function M:set_state(state)
+function M:set_state(state, state_data)
 	assert(STATES[state])
 	if self.state ~= state then
 		COMMON.LOG.w("state changed from:" ..  self.state .. " to " .. state )
@@ -59,9 +60,12 @@ function M:set_state(state)
 		local data
 		if self.state == STATES.EVENT then
 			self.movement_speed = 0
-			data = self.event_manager:get_next_event()
+			data = state_data
 		elseif self.state == STATES.WALK then
 			self.movement_speed = 50
+		elseif self.state == STATES.HERO_CHOOSE then
+			self.movement_speed = 0
+			data = state_data
 		end
 
 		self:observable_notify(EVENTS.STATE_CHANGED, data)
@@ -91,7 +95,8 @@ function M:update(dt)
 	if (self.t > 0) then
 		self.t = self.t - dt
 	elseif self.state == STATES.WALK then
-		self:set_state(STATES.EVENT)
+		local data = self.event_manager:get_next_event()
+		self:set_state(STATES.EVENT, data)
 		self.t = 100500
 	end
 	--ENDDEBUG
@@ -117,6 +122,11 @@ function M:on_input(action_id, action)
 			if char then
 				if char:is_on_character(action.x, action.y) then
 					COMMON.w("character selected:" .. i)
+					local data = {
+						character = char,
+						returned_state = self.state
+					}
+					self:set_state(STATES.HERO_CHOOSE, data)
 					return
 				end
 			end
