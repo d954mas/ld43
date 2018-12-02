@@ -34,6 +34,7 @@ function M:initialize()
 	self.time = 24 * 60 --minutes
 	self.food = 100
 	self.position = 0
+	self.path_lenght = 14254
 	self.max_time = self.time
 	---@type Character[]
 	self.characters = {Character(CHARACTERS[1],self),

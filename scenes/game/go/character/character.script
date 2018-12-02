@@ -4,7 +4,8 @@ local COMMON = require "libs.common"
 go.property("slot", 1)
 
 local function update_position(self)
-    self.position.x = self.char_model.rect[1]
+    local scale = go.get_world_scale()
+    self.position.x = self.char_model.rect[1] + WORLD.position / scale.x
     self.position.y = self.char_model.rect[2]
     go.set_position(self.position)
 end
@@ -33,6 +34,7 @@ end
 
 function update(self, dt)
     self.subscription:act(self)
+    update_position(self)
 end
 
 function on_message(self, message_id, message, sender)
