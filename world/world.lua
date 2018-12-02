@@ -127,10 +127,31 @@ function M:count_chars()
 	return characters
 end
 
-function M:get_char_alive(name)
+function M:get_char_alive(id)
+	for i=1,5 do
+		local char = self.characters[i]
+		if char and char.state ~= char.STATES.DIE and char.state ~= char.STATES.DYING and char:get_id() == id then
+			return char
+		end
+	end
 end
 
 function M:get_random_alive_char()
+	local characters = { }
+	for i=1,5 do
+		local char = self.characters[i]
+		if char  and char.state ~= char.STATES.DIE and char.state ~= char.STATES.DYING then
+			table.insert(characters, char)
+		end
+	end
+	return LUME.randomchoice(characters)
+end
+
+function M:char_die(id)
+	local char = self:get_char_alive(id)
+	if char then
+		char:die()
+	end
 end
 
 function M:set_hungry(val)

@@ -1,7 +1,7 @@
 script: ""
 fonts {
   name: "rpg"
-  font: "/gooey/themes/rpg/fonts/rpg.font"
+  font: "/assets/fonts/deadline_font.font"
 }
 background_color {
   x: 0.0
@@ -96,7 +96,9 @@ nodes {
   }
   type: TYPE_TEXT
   blend_mode: BLEND_MODE_ALPHA
-  text: "<text>"
+  text: "\320\224\320\260\320\273\321\214\321\210\320\265\n"
+  "\n"
+  ""
   font: "rpg"
   id: "text"
   xanchor: XANCHOR_NONE
@@ -115,7 +117,7 @@ nodes {
     w: 1.0
   }
   adjust_mode: ADJUST_MODE_FIT
-  line_break: false
+  line_break: true
   parent: "button"
   layer: ""
   inherit_alpha: true

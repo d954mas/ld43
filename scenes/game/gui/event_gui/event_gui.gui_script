@@ -28,19 +28,29 @@ local function get_lost(self, button_info)
       World:change_food(-v)
     elseif (t == "time") then
       World.time = World.time - v
+    elseif (t == "character") then
+      World:char_die(v)
     end
   end
 end
 
 local function action_button(self, button_info)
-  get_rewards(self, button_info)
-  get_lost(self, button_info)
+  if (button_info.reward) then
+    get_rewards(self, button_info)
+  end
+  if (button_info.lost) then
+    get_lost(self, button_info)
+  end
 end
 
 local function create_button(self, pos, button_info)
   local btn = gui.clone_tree(self.button_template)
   gui.set_position(btn[hash_string_button], pos)
   fill_button(self, btn, button_info)
+  local met = gui.get_text_metrics_from_node(btn[hash_string_text])
+  local size = gui.get_size(btn[hash_string_button])
+  size.y = math.max(met.height, size.y)
+  gui.set_size(btn[hash_string_button], size)
   btn = btn[hash_string_button]
   self.buttons_action[btn] = function(button)
     local btn_clb = assert(btn_callback[button_info.action], "No action for button: " .. button_info.action)
@@ -59,21 +69,22 @@ local function clear_buttons(self)
 end
 
 local function set_enabled(self, value)
-  gui.set_enabled(self.icon_node, value)
   gui.set_enabled(self.text_node, value)
   self.enabled = value
 end
 
 local function on_update_event(self, event)
   clear_buttons(self)
-  local pos = self.top_button_pos
+  gui.set_text(self.text_node, event.text)
+  local met = gui.get_text_metrics_from_node(self.text_node)
+  local pos = gui.get_position(self.text_node)
+  pos.y = pos.y - met.height * 0.5 - self.buttons_offset
   for i, b in ipairs(event.buttons) do
     local btn = create_button(self, pos, b)
     gui.set_id(btn, "template_button_action_" .. i)
     table.insert(self.buttons, btn)
-    pos.y = pos.y - self.buttons_offset - self.button_size.y
+    pos.y = pos.y - self.buttons_offset - gui.get_size(btn).y
   end
-  gui.set_text(self.text_node, event.text)
   --gui.set_texture(self.icon_node, data.icon)
 end
 
@@ -110,12 +121,11 @@ end
 
 function init(self)
   msg.post(".", "acquire_input_focus")
-	self.icon_node = gui.get_node("event_icon")
   self.text_node = gui.get_node("event_text")
   self.button_template = gui.get_node("template_btn/button")
   gui.set_enabled(self.button_template, false)
   self.button_size = gui.get_size(self.button_template)
-  self.top_button_pos = vmath.vector3(1676, 645, 0)
+  self.top_button_pos = gui.get_position(self.button_template)
   self.buttons_offset = 40
   self.buttons = { }
   self.buttons_action = { }

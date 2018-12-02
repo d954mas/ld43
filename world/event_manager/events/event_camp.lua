@@ -24,3 +24,5 @@ local e = function(world)
 		}
 	}
 end
+
+return e

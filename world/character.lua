@@ -46,6 +46,15 @@ function M:initialize(data, world)
     self.rect = {0,CHAR_Y,SIZE[1],SIZE[2]} --x, y, w, h origin in center
 end
 
+function M:get_name()
+  return self.data.name
+end
+
+function M:get_id()
+  return self.data.id
+end
+
+
 function M:set_new_pos(pos,speed)
     self.new_pos = pos
     self.movement_speed = speed

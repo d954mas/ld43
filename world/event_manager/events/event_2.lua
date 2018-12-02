@@ -3,8 +3,6 @@ local e = function(world)
   local name = char and char:get_name() or "CHARACTER_NAME"
   return {
     {
-      character_event = "random",
-      icon = "1",
       text = name .. " нашел немного старых консерв. Возможно, вам хватит этого на некоторое время.",
       buttons = {
         {
@@ -18,3 +16,5 @@ local e = function(world)
     }
   }
 end
+
+return e
