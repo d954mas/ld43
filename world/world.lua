@@ -127,6 +127,11 @@ function M:count_chars()
 	return characters
 end
 
+function M:get_char_alive(name)
+end
+
+function M:get_random_alive_char()
+end
 
 function M:set_hungry(val)
 	self.hungry = val
@@ -174,7 +179,7 @@ function M:update(dt)
 		--wait for hero die before show new event
 		if self.event_dt > TIME_TO_EVENT and not eat then
 			self.event_dt = 0
-			local data = self.event_manager:get_next_event()
+			local data = self.event_manager:get_next_event(self)
 			self:set_state(STATES.EVENT, data)
 		end
     end

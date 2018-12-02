@@ -12,6 +12,31 @@ local function fill_button(self, button, button_info)
   gui.set_enabled(button[hash_string_button], true)
 end
 
+local function get_rewards(self, button_info)
+  for t, v in pairs(button_info.reward) do
+    if (t == "food") then
+      World:change_food(v)
+    elseif (t == "time") then
+      World.time = World.time + v
+    end
+  end
+end
+
+local function get_lost(self, button_info)
+  for t, v in pairs(button_info.lost) do
+    if (t == "food") then
+      World:change_food(-v)
+    elseif (t == "time") then
+      World.time = World.time - v
+    end
+  end
+end
+
+local function action_button(self, button_info)
+  get_rewards(self, button_info)
+  get_lost(self, button_info)
+end
+
 local function create_button(self, pos, button_info)
   local btn = gui.clone_tree(self.button_template)
   gui.set_position(btn[hash_string_button], pos)
@@ -19,6 +44,7 @@ local function create_button(self, pos, button_info)
   btn = btn[hash_string_button]
   self.buttons_action[btn] = function(button)
     local btn_clb = assert(btn_callback[button_info.action], "No action for button: " .. button_info.action)
+    action_button(self, button_info)
     btn_clb(self, button_info, button)
   end
   return btn

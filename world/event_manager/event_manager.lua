@@ -30,11 +30,11 @@ function M:shuffle()
 end
 
 function M:parse_event(event)
-  table.insert(self.events, LUME.clone(event))
+  table.insert(self.events, event)
 end
 
-function M:get_next_event()
-  return table.remove(self.events)
+function M:get_next_event(world)
+  return table.remove(self.events)(world)
 end
 
 return M
