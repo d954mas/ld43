@@ -3,16 +3,23 @@ local Subscription = require "libs.proxy_subscription"
 local COMMON = require "libs.common"
 go.property("slot", 1)
 
+local animation_time = 4
+local dy = 50
 local function update_position(self)
+    local dy = self.time/(animation_time/2) * dy
+    if self.time > animation_time/2 then
+        dy = dy - (self.time-animation_time/2)/(animation_time/2) * dy
+    end
     local scale = go.get_world_scale()
     self.position.x = self.char_model.rect[1] + WORLD.position / scale.x
-    self.position.y = self.char_model.rect[2]
+    self.position.y = self.char_model.rect[2] + dy
     go.set_position(self.position)
 end
 
 function init(self)
     self.position = go.get_position()
 	self.char_model = WORLD:get_character(self.slot)
+    self.time = (self.slot-1)*1
     self.subscription = Subscription()
 	sprite.play_flipbook("#sprite_character",self.char_model.data.art)
     self.subscription:add(self.char_model,self.char_model.EVENTS.STATE_CHANGED, function(go_self,model,data,event)
@@ -21,10 +28,13 @@ function init(self)
                        0, function() COMMON.LOG.w("hero die") self.char_model:set_state(self.char_model.STATES.DIE) end)
         end
     end)
+
     self.subscription:add(self.char_model,self.char_model.EVENTS.POSITION_CHANGED, function()
         update_position(self)
     end)
     update_position(self)
+
+
 end
 
 function final(self)
@@ -33,6 +43,12 @@ function final(self)
 end
 
 function update(self, dt)
+    if WORLD.movement_speed ~= 0 then
+        self.time = self.time + dt
+        if self.time > animation_time then
+            self.time = 0
+        end
+    end
     self.subscription:act(self)
     update_position(self)
 end
