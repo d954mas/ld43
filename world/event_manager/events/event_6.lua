@@ -47,6 +47,12 @@ local e = function(world)
         reward = rand > 50 and {
           time = 50,
           food = 15
+        },
+        buttons = {
+          {
+            text = "Продолжить путь" ,
+            action = "close"
+          }
         }
       }
     }
