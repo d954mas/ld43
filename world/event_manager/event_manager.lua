@@ -9,6 +9,7 @@ local common_events = {
 	require("world.event_manager.events.event_6"),
 	require("world.event_manager.events.event_7"),
 	require("world.event_manager.events.event_8"),
+	require("world.event_manager.events.event_9"),
 }
 
 local start_events = {
