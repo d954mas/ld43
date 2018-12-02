@@ -47,14 +47,17 @@ local function on_update_event(self, event)
     pos.y = pos.y - self.buttons_offset - self.button_size.y
   end
   gui.set_text(self.text_node, event.text)
+  --gui.set_texture(self.icon_node, data.icon)
 end
 
 local function on_open_event(self, model, data, event)
+  if (model.state ~= model.STATES.EVENT) then
+    return
+  end
   self.model = model
   self.event = data
   set_enabled(self, true)
   on_update_event(self, data[1])
-  --gui.set_texture(self.icon_node, data.icon)
 end
 
 on_close = function(self)
@@ -65,6 +68,7 @@ end
 btn_callback.debug = function(self, button_info, button)
   COMMON.LOG.w(button_info.text)
   on_close(self)
+  World:set_state(World.STATES.WALK)
 end
 
 btn_callback.exit = function(self, button_info, button)

@@ -92,6 +92,7 @@ function M:update(dt)
 		self.t = self.t - dt
 	elseif self.state == STATES.WALK then
 		self:set_state(STATES.EVENT)
+		self.t = 100500
 	end
 	--ENDDEBUG
 

@@ -162,7 +162,7 @@ nodes {
   layer: ""
   inherit_alpha: true
   alpha: 1.0
-  template: "/scenes/game/gui/event_gui/template_button.gui"
+  template: "/scenes/game/gui/template_button.gui"
   template_node_child: false
 }
 nodes {

@@ -1,3 +1,31 @@
+local function set_character_description(self, character)
+  gui.set_text(self.description_text, "description")
+end
+
+local function set_character_positive(self, character)
+  gui.set_text(self.positive_text, "positive")
+end
+
+local function set_character_negative(self, character)
+  gui.set_text(self.negative_text, "negative")
+end
+
+local function update_character_text(self, character)
+  set_character_description(self, character)
+  set_character_positive(self, character)
+  set_character_negative(self, character)
+end
+
+local function set_choose_button_enabled(self, flag)
+  gui.set_enabled(self.choose_button, flag)
+end
+
+local function set_character(self, character, choose_callback)
+  update_character_text(self, character)
+  self.choose_callback = choose_callback
+  set_choose_button_enabled(choose_callback)
+end
+
 function init(self)
 	-- Add initialization code here
 	-- Remove this function if not needed
