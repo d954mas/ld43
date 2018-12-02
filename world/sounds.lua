@@ -6,8 +6,8 @@ local M = COMMON.class("Stepper")
 
 local Sounds = {
 	{path = 11254/3, sound = "/sounds#blizzard", time=4},
-	{path = 14254/3*2, sound = "/sounds#forest",time = 4 },
-	{path = 10000000000, sound = "/sounds#mountains",time = 1}
+	{path = 14254/3*2, sound = "/sounds#mountains",time = 4 },
+	{path = 10000000000, sound = "/sounds#forest",time = 1}
 }
 
 function M:initialize()

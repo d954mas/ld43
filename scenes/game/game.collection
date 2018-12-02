@@ -358,7 +358,7 @@ embedded_instances {
   position {
     x: 0.0
     y: 0.0
-    z: 0.2
+    z: 0.1
   }
   rotation {
     x: 0.0
@@ -800,7 +800,7 @@ embedded_instances {
   "  }\n"
   "  properties {\n"
   "    id: \"movement_scale\"\n"
-  "    value: \"0.9\"\n"
+  "    value: \"1.0\"\n"
   "    type: PROPERTY_TYPE_NUMBER\n"
   "  }\n"
   "  properties {\n"
@@ -958,7 +958,7 @@ embedded_instances {
   position {
     x: 0.0
     y: 0.0
-    z: 0.01
+    z: 0.2
   }
   rotation {
     x: 0.0
@@ -995,7 +995,7 @@ embedded_instances {
   "  }\n"
   "  properties {\n"
   "    id: \"movement_scale\"\n"
-  "    value: \"0.5\"\n"
+  "    value: \"0.85\"\n"
   "    type: PROPERTY_TYPE_NUMBER\n"
   "  }\n"
   "  properties {\n"
@@ -1153,7 +1153,7 @@ embedded_instances {
   position {
     x: 0.0
     y: 0.0
-    z: -0.1
+    z: -0.2
   }
   rotation {
     x: 0.0
@@ -1385,7 +1385,7 @@ embedded_instances {
   "  }\n"
   "  properties {\n"
   "    id: \"movement_scale\"\n"
-  "    value: \"0.45\"\n"
+  "    value: \"0.9\"\n"
   "    type: PROPERTY_TYPE_NUMBER\n"
   "  }\n"
   "  properties {\n"
@@ -1543,7 +1543,7 @@ embedded_instances {
   position {
     x: 0.0
     y: 0.0
-    z: -0.05
+    z: -0.1
   }
   rotation {
     x: 0.0
