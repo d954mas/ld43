@@ -36,6 +36,7 @@ local e = function(world)
           action = "close"
         }
       },
+    },
       {
         text = "Вам выпадает число " .. rand .. ". " .. (robert and "Роберт доволен собой" or rand <= 50 and "Проигрышь! Карты лгать не могут. Получите свою награду." or "Ого, я удивлен. Карты не лгут, получите награду.") ,
         action = "close",
@@ -49,7 +50,6 @@ local e = function(world)
         }
       }
     }
-  }
 end
 
 return e
