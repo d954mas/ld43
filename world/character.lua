@@ -84,7 +84,7 @@ function M:play_animation()
 end
 
 function M:is_on_character(x,y)
-    x = x/ SCALE
+    x = x/ SCALE - 120
     y = y/ SCALE
     local h_w = self.rect[3]/2
     local h_h = self.rect[4]/2
