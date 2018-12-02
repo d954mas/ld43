@@ -20,6 +20,7 @@ function Scene:initialize()
 end
 
 function Scene:on_show(input)
+    math.randomseed(os.time())
     sound.play("/sounds#wind_ambient", {gain = 0.4} )
    -- WORLD:set_state(WORLD.STATES.EVENT)
   --  local character = WORLD:get_character(1)

@@ -3,10 +3,18 @@ local LUME = require "libs.lume"
 
 --events for build
 local common_events = {
-	require("world.event_manager.events.event_1")
+	require("world.event_manager.events.event_1"),
+	require("world.event_manager.events.event_1"),
+	require("world.event_manager.events.event_1"),
+	require("world.event_manager.events.event_1"),
+	require("world.event_manager.events.event_1"),
+	require("world.event_manager.events.event_1"),
+	require("world.event_manager.events.event_1"),
+	require("world.event_manager.events.event_1"),
+	require("world.event_manager.events.event_1"),
+	require("world.event_manager.events.event_1"),
 }
 
----@class World:Observable
 local M = COMMON.class("EventManager")
 
 function M:initialize()
