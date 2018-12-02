@@ -8,6 +8,7 @@ COMMON.LOG.override_print()
 
 
 if not defos then
+
     
     defos = {}
     local mt = {}
