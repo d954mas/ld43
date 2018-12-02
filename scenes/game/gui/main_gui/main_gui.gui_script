@@ -1,4 +1,7 @@
 local WORLD = require "world.world"
+local UpdatedLabel = require "gui.updated_label"
+local ProxySubscription = require "libs.proxy_subscription"
+local FlyingNumber = require "gui.flying_number"
 
 local function set_fill_angle(node, value)
   local v = math.max(0, math.min(360 * value, 360))
@@ -7,10 +10,30 @@ end
 
 function init(self)
 	self.time_pie = gui.get_node("time_pie")
-  set_fill_angle(self.time_pie, 1)
+	set_fill_angle(self.time_pie, 1)
+	self.lbl_food = UpdatedLabel(gui.get_node("food_label"))
+	self.lbl_food:set_tick_time(1)
+	self.lbl_food:set_value(WORLD.food,true)
+	self.subscription = ProxySubscription()
+	self.subscription:add(WORLD, WORLD.EVENTS.FOOD_CHANGED, function(go_self, model, data,event)
+		self.lbl_food:set_value(WORLD.food)
+		local pos = gui.get_position(self.lbl_food.lbl)
+		local metrics = gui.get_text_metrics_from_node(self.lbl_food.lbl)
+		pos.x = pos.x - metrics.width - 7
+		local to = vmath.vector3(pos)
+		to.y = to.y - 100
+		local lbl = FlyingNumber.fly(self.lbl_food.lbl,data.food,pos,to,1,true,0.2)
+		gui.set_pivot(lbl, gui.PIVOT_CENTER)
+	end)
+end
+
+function final(self)
+	self.subscription:unsubscribe()
 end
 
 function update(self, dt)
+	self.lbl_food:update(dt)
+	self.subscription:act()
 	set_fill_angle(self.time_pie, WORLD.time / WORLD.max_time)
 end
 

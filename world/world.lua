@@ -13,7 +13,8 @@ local CHAR_POSITIONS = {
 local M = COMMON.class("World")
 M:include(Observable)
 local EVENTS = {
-	STATE_CHANGED = "STATE_CHANGED"
+	STATE_CHANGED = "STATE_CHANGED",
+	FOOD_CHANGED = "FOOD_CHANGED"
 }
 
 local STATES = {
@@ -29,6 +30,7 @@ function M:initialize()
 	self:set_observable_events(self.EVENTS)
 	self.movement_speed = 50
 	self.time = 24 * 60 --minutes
+	self.food = 100
 	self.position = 0
 	self.max_time = self.time
 	---@type Character[]
@@ -39,6 +41,13 @@ function M:initialize()
 	Character(CHARACTERS[5],self)}
 	self:update_positions()
 	self.event_manager = EventManager()
+end
+
+function M:change_food(amount)
+	if amount == 0 then return end
+	local prev_food = self.food
+	self.food = math.max(0,self.food + amount)
+	self:observable_notify(EVENTS.FOOD_CHANGED,{food = self.food - prev_food})
 end
 
 function M:update_positions()
@@ -117,6 +126,7 @@ end
 
 function M:on_input(action_id, action)
 	if action_id == COMMON.HASHES.INPUT_TOUCH and action.pressed then
+		self:change_food(-4)
 		for i=1, 5 do
 			local char = self.characters[i]
 			if char then
