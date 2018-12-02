@@ -27,7 +27,7 @@ local e = function(world)
           lost = {
             character = random_char:get_name()
           }
-        }
+        } or nil
       }
     }
   }
