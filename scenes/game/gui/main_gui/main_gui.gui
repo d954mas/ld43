@@ -46,7 +46,7 @@ nodes {
   }
   type: TYPE_PIE
   blend_mode: BLEND_MODE_ALPHA
-  texture: ""
+  texture: "gui/deadline_clock"
   id: "time_pie"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
