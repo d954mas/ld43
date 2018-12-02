@@ -6,6 +6,7 @@ local JESTER = require "Jester.jester"
 local WORLD = require "world.world"
 local Subscription = require "libs.proxy_subscription"
 local STEPPER = require "world.stepper"
+local SOUNDS = require "world.sounds"
 
 function Scene:init_input()
     COMMON.input_acquire()
@@ -21,7 +22,9 @@ end
 
 function Scene:on_show(input)
     math.randomseed(os.time())
-    sound.play("/sounds#wind_ambient", {gain = 0.4} )
+    --sound.play("/sounds#wind_ambient", {gain = 0.4} )
+    particlefx.play("/particles#snow")
+    SOUNDS:start()
    -- WORLD:set_state(WORLD.STATES.EVENT)
   --  local character = WORLD:get_character(1)
     --character:set_state(character.STATES.DYING)
@@ -49,6 +52,7 @@ function Scene:update(go_self, dt)
     if WORLD.state == WORLD.STATES.WALK then
         STEPPER:update(dt)
     end
+    SOUNDS:update(dt)
 end
 
 function Scene:show_out(co)

@@ -46,7 +46,7 @@ function M:initialize()
 	self.event_dt = 0
 	self.food = 10
 	self.hungry = 0
-	self.position = 0
+	self.position = 4000 or 0
 	self.path_lenght = 14254 - 1920
 	self.max_time = self.time
 	self.food_tick_dt = 0
@@ -124,6 +124,7 @@ function M:count_chars()
 			characters = characters + 1
 		end
 	end
+
 	return characters
 end
 
