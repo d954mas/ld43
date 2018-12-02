@@ -5,7 +5,7 @@ local ComplexSubscription = require "libs.complex_subscription"
 local SCALE = 0.6
 local CHAR_Y = 300
 local SIZE = {
-    350 * SCALE, 500 * SCALE
+    450 * SCALE, 1000 * SCALE
 }
 
 ---@class Character:Observable
