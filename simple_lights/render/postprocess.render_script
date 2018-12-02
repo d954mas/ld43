@@ -1,5 +1,3 @@
-local render_helper = require "orthographic.render.helper"
-
 local IDENTITY = vmath.matrix4()
 
 local BLACK = vmath.vector4(0)
