@@ -20,7 +20,8 @@ local STATES = {
     STOP = "STOP",
     WALKING = "WALKING",
     DYING = "DYING",
-    DIE = "DIE"
+    DIE = "DIE",
+    UPDATE_POS = "UPDATE_POS"
 }
 
 ---@param world World
@@ -45,12 +46,27 @@ function M:initialize(data, world)
     self.rect = {0,CHAR_Y,SIZE[1],SIZE[2]} --x, y, w, h origin in center
 end
 
+function M:set_new_pos(pos,speed)
+    self.new_pos = pos
+    self.movement_speed = speed
+    self:set_state(STATES.UPDATE_POS)
+end
+
 function M:set_state(state)
+    if state ~= STATES.DIE and (self.state == STATES.DYING or self.state == STATES.DIE) then
+        return
+    end
     assert(STATES[state], "unknown state:" .. state)
     if self.state ~= state then
         COMMON.LOG.w("state changed from:" .. self.state .. " " .. state)
         self.state = state
         self:observable_notify(self.EVENTS.STATE_CHANGED)
+    end
+end
+
+function M:die()
+    if self.STATES ~= STATES.DYING or self.STATES ~= STATES.DIE then
+        self:set_state(STATES.DYING)
     end
 end
 
@@ -73,6 +89,15 @@ end
 function M:update(dt)
     if self.state == STATES.DYING or self.state == STATES.DIE then
         return
+    end
+    if self.state == STATES.UPDATE_POS then
+        local new_pos = self.rect[1] + self.movement_speed * dt
+        if new_pos > self.new_pos then
+            new_pos = self.new_pos
+            self.new_pos = 0
+            self:set_state(STATES.WALKING)
+        end
+        self:set_position(new_pos)
     end
 end
 
