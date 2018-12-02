@@ -7,6 +7,7 @@ local WORLD = require "world.world"
 local Subscription = require "libs.proxy_subscription"
 local STEPPER = require "world.stepper"
 local SOUNDS = require "world.sounds"
+local EVENTS = require "world.event_manager.event_manager"
 
 function Scene:init_input()
     COMMON.input_acquire()

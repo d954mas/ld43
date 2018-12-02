@@ -5,6 +5,9 @@ local CHARACTERS = require "world.characters"
 local EventManager = require "world.event_manager.event_manager"
 local LUME = require "libs.lume"
 local TAG = "World"
+local TIME_EVENT = require "world.event_manager.events.event_time"
+local WIN_EVENT = require "world.event_manager.events.event_win"
+local CAMP_EVENT = require "world.event_manager.events.event_camp"
 
 local CHAR_POSITIONS = {
 1400,1080,780,480,180
@@ -46,7 +49,7 @@ function M:initialize()
 	self.event_dt = 0
 	self.food = 10
 	self.hungry = 0
-	self.position = 4000 or 0
+	self.position = 0 --5000
 	self.path_lenght = 14254 - 1920
 	self.max_time = self.time
 	self.food_tick_dt = 0
@@ -85,8 +88,17 @@ end
 function M:check_state()
 	local characters = self:count_chars()
 
-	if characters == 0 then
+	if characters == 0 or (self.time <= 0 and characters == 1) then
 		self:set_state(STATES.GAME_OVER)
+		return
+	end
+
+	if self.time <= 0 then
+		self:set_state(STATES.EVENT,TIME_EVENT(self))
+	end
+
+	if self.state == STATES.WALK and self.position > BG_SIZE-1920 then
+		self:set_state(STATES.EVENT, WIN_EVENT(self))
 	end
 end
 
@@ -276,6 +288,10 @@ function M:on_input(action_id, action)
 				end
 			end
 		end
+	end
+
+	if action_id == hash("space") and action.pressed and  self.state == STATES.WALK then
+		self:set_state(STATES.EVENT, CAMP_EVENT(self))
 	end
 end
 
