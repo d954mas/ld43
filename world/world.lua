@@ -15,7 +15,7 @@ local CHAR_POSITIONS = {
 
 local TICK_SPEND_FOOD = 18
 local TOTAL_TICKS = 420 --time to move from start to finish
-local START_TICKS = 210
+local START_TICKS = 270
 local BG_SIZE = 14254
 local SPEED = BG_SIZE/TOTAL_TICKS
 local ON_CHARACTER_DEAD_TIME = 25
