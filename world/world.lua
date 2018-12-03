@@ -20,7 +20,9 @@ local BG_SIZE = 14254
 local SPEED = BG_SIZE/TOTAL_TICKS
 local ON_CHARACTER_DEAD_TIME = 25
 local TIME_TO_EVENT = 50/4
-local DT_SCALE = 2 
+local DT_SCALE = 2
+local FADE_IN = 3
+local FADE_OUT = 100
 
 ---@class World:Observable
 local M = COMMON.class("World")
@@ -61,6 +63,7 @@ function M:initialize()
 	Character(CHARACTERS[5],self)}
 	self:update_positions(true)
 	self.event_manager = EventManager()
+	self.changing_alpha = FADE_IN
 end
 
 function M:change_food(amount)
@@ -187,6 +190,13 @@ function M:set_hungry(val)
 end
 
 function M:update(dt)
+	if self.changing_alpha> 0 then
+		self.changing_alpha = self.changing_alpha - dt
+		local a = 1- self.changing_alpha/FADE_IN
+		model.set_constant("main:/quad#model", "tint0", vmath.vector4(a, a, a, 1))
+		return
+	end
+
 	dt = dt * DT_SCALE
 	self:check_state()
 	if self.state == STATES.GAME_OVER then

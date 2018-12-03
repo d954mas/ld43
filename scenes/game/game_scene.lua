@@ -39,6 +39,7 @@ function Scene:init(go_self)
             msg.post("/game_over_gui#game_over_gui", COMMON.HASHES.MSG_ENABLE)
         end
     end)
+    model.set_constant("main:/quad#model", "tint0", vmath.vector4(0, 0, 0, 1))
 end
 
 function Scene:final(go_self)

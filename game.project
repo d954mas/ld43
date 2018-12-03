@@ -93,3 +93,6 @@ bundle_identifier = com.elpaco.ld42
 [profiler]
 track_cpu = 1
 
+[particle_fx]
+max_particle_count = 2048
+
