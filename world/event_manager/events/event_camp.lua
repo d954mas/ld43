@@ -1,6 +1,6 @@
 local e = function(world)
 	local count = world:count_chars()
-	local time = 10 * count
+	local time = 10
 	return {
 		{
 			icon = "1",
@@ -10,7 +10,7 @@ local e = function(world)
 					text = "Искать. Потратить " .. time .. " времени.",
 					action = "close",
 					reward = {
-						 food = math.random(0, 2 * count)
+						 food = math.random(0, 3 * count)
 					},
 					lost = {
 						time = time

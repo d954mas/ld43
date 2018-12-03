@@ -9,7 +9,11 @@ local e = function(world)
           action = "close",
           reward = {
             food = math.random(8, 12)
+          },
+          lost = {
+            time = 20
           }
+
         },
         {
           text = "Пройти мимо",

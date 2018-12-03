@@ -9,12 +9,12 @@ local e = function(world)
           text = robert:get_name() .. " будет играть" ,
           action = "next",
           lost = rand <= 50 and {
-            time = 60,
-            food = 20
+            time = 40,
+            food = 10
           },
           reward = rand > 50 and {
-            time = 50,
-            food = 15
+            time = 40,
+            food = 10
           },
           value = 2
         }
@@ -22,12 +22,12 @@ local e = function(world)
           text = "Сыграть" ,
           action = "next",
           lost = rand < 0.5 and {
-            time = 60,
-            food = 20
+            time = 40,
+            food = 10
           },
           reward = rand >= 0.5 and {
-            time = 50,
-            food = 15
+            time = 49,
+            food = 10
           },
           value = 2
         },
@@ -41,12 +41,12 @@ local e = function(world)
         text = "Вам выпадает число " .. rand .. ". " .. (robert and "Роберт доволен собой" or rand <= 50 and "Проигрышь! Карты лгать не могут. Получите свою награду." or "Ого, я удивлен. Карты не лгут, получите награду.") ,
         action = "close",
         lost = rand <= 50 and {
-          time = 60,
-          food = 20
+          time = 50,
+          food = 10
         },
         reward = rand > 50 and {
           time = 50,
-          food = 15
+          food = 10
         },
         buttons = {
           {

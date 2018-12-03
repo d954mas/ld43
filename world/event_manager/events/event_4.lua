@@ -24,11 +24,11 @@ local e = function(world)
           action = "close"
         },
         {
-          text = "Дойти до места, обозначенного картой. (-20 времени)",
+          text = "Дойти до места, обозначенного картой. (-30 времени)",
           action = "next",
           value = 3,
           lost = {
-            time = 20
+            time = 30
           }
         }
       }

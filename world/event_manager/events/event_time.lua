@@ -24,7 +24,7 @@ local e = function(world)
             time = 45
           },
           lost = {
-            character = name
+            character = char.data.id
           }
 				}
 			}

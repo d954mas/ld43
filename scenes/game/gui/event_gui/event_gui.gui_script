@@ -30,6 +30,7 @@ local function get_lost(self, button_info)
     elseif (t == "time") then
       World.time = World.time - v
     elseif (t == "character") then
+      COMMON.w("lost:" .. v)
       World:char_die(v)
     end
   end

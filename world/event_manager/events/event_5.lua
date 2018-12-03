@@ -13,10 +13,10 @@ local e = function(world)
           value = 2
         },
         {
-          text = "Спрятаться и переждать (-15 времени)",
+          text = "Спрятаться и переждать (-20 времени)",
           action = "close",
           lost = {
-            time = 15
+            time = 20
           }
         }
       }

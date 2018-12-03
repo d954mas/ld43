@@ -13,14 +13,14 @@ local CHAR_POSITIONS = {
 1400,1080,780,480,180
 }
 
-local TICK_SPEND_FOOD = 30
+local TICK_SPEND_FOOD = 18
 local TOTAL_TICKS = 420 --time to move from start to finish
-local START_TICKS = 420
+local START_TICKS = 210
 local BG_SIZE = 14254
 local SPEED = BG_SIZE/TOTAL_TICKS
-local ON_CHARACTER_DEAD_TIME = 45
-local TIME_TO_EVENT = 40/4
-local DT_SCALE = 2
+local ON_CHARACTER_DEAD_TIME = 25
+local TIME_TO_EVENT = 50/4
+local DT_SCALE = 2 
 
 ---@class World:Observable
 local M = COMMON.class("World")
