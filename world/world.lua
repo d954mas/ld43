@@ -20,7 +20,7 @@ local BG_SIZE = 14254
 local SPEED = BG_SIZE/TOTAL_TICKS
 local ON_CHARACTER_DEAD_TIME = 45
 local TIME_TO_EVENT = 40/4
-local DT_SCALE = 20
+local DT_SCALE = 2
 
 ---@class World:Observable
 local M = COMMON.class("World")
@@ -195,9 +195,9 @@ function M:update(dt)
 
     if self.state == STATES.WALK then
         self.position = self.position + self.movement_speed * dt
-	--	self.food_tick_dt = self.food_tick_dt + dt
-	--	self.event_dt = self.event_dt + dt
-	--	self.time = self.time - dt
+		self.food_tick_dt = self.food_tick_dt + dt
+		self.event_dt = self.event_dt + dt
+		self.time = self.time - dt
 		local eat = false
 		if self.food_tick_dt > TICK_SPEND_FOOD then
 			self.food_tick_dt = 0
