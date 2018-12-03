@@ -8,7 +8,7 @@ local function set_character_description(self, character)
 end
 
 local function set_character_positive(self, character)
-  local str = "Позитивные черты: "
+  local str = "Positive traits: "
   for i_, v in ipairs(character.data.positive) do
     str = str .. "\n+ " .. v
   end
@@ -16,7 +16,7 @@ local function set_character_positive(self, character)
 end
 
 local function set_character_negative(self, character)
-  local str = "Негативные черты: "
+  local str = "Negative traits: "
   for i_, v in ipairs(character.data.negative) do
     str = str .. "\n- " .. v
   end
