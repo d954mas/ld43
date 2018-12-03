@@ -1,22 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5f556a55-332e-4a71-9fea-121fa984465c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/world/event_manager/events/event_1.lua" beforeDir="false" afterPath="$PROJECT_DIR$/world/event_manager/events/event_1.lua" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/world/event_manager/events/event_10.lua" beforeDir="false" afterPath="$PROJECT_DIR$/world/event_manager/events/event_10.lua" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/world/event_manager/events/event_2.lua" beforeDir="false" afterPath="$PROJECT_DIR$/world/event_manager/events/event_2.lua" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/world/event_manager/events/event_3.lua" beforeDir="false" afterPath="$PROJECT_DIR$/world/event_manager/events/event_3.lua" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/world/event_manager/events/event_4.lua" beforeDir="false" afterPath="$PROJECT_DIR$/world/event_manager/events/event_4.lua" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/world/event_manager/events/event_5.lua" beforeDir="false" afterPath="$PROJECT_DIR$/world/event_manager/events/event_5.lua" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/world/event_manager/events/event_6.lua" beforeDir="false" afterPath="$PROJECT_DIR$/world/event_manager/events/event_6.lua" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/world/event_manager/events/event_7.lua" beforeDir="false" afterPath="$PROJECT_DIR$/world/event_manager/events/event_7.lua" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/world/event_manager/events/event_8.lua" beforeDir="false" afterPath="$PROJECT_DIR$/world/event_manager/events/event_8.lua" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/world/event_manager/events/event_9.lua" beforeDir="false" afterPath="$PROJECT_DIR$/world/event_manager/events/event_9.lua" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/world/event_manager/events/event_camp.lua" beforeDir="false" afterPath="$PROJECT_DIR$/world/event_manager/events/event_camp.lua" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/world/event_manager/events/event_time.lua" beforeDir="false" afterPath="$PROJECT_DIR$/world/event_manager/events/event_time.lua" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/world/event_manager/events/event_win.lua" beforeDir="false" afterPath="$PROJECT_DIR$/world/event_manager/events/event_win.lua" afterDir="false" />
-    </list>
+    <list default="true" id="5f556a55-332e-4a71-9fea-121fa984465c" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,8 +76,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/world/event_manager/events/event_win.lua">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="128">
-              <caret line="8" column="40" selection-start-line="8" selection-start-column="40" selection-end-line="8" selection-end-column="40" />
+            <state relative-caret-position="272">
+              <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
             </state>
           </provider>
         </entry>
@@ -267,7 +252,7 @@
       <workItem from="1543682471973" duration="3222000" />
       <workItem from="1543746885570" duration="2172000" />
       <workItem from="1543778868873" duration="3922000" />
-      <workItem from="1543862840204" duration="11268000" />
+      <workItem from="1543862840204" duration="11799000" />
     </task>
     <task id="LOCAL-00001" summary="ambient">
       <created>1543756920684</created>
@@ -280,7 +265,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="36411000" />
+    <option name="totallyTimeSpent" value="36942000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="960" height="1040" extended-state="0" />
@@ -597,8 +582,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/world/event_manager/events/event_win.lua">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="8" column="40" selection-start-line="8" selection-start-column="40" selection-end-line="8" selection-end-column="40" />
+        <state relative-caret-position="272">
+          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
         </state>
       </provider>
     </entry>
