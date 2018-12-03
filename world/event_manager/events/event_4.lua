@@ -3,28 +3,28 @@ local e = function(world)
   local name = char and char:get_name() or "CHARACTER_NAME"
   return {
     {
-      text = name .. " замечает на дороге странно блестящее нечто.",
+      text = name .. "... has noticed something peculiarly shiny on the road. ",
       buttons = {
         {
-          text = "Пройти мимо",
+          text = "Walk past ",
           action = "close"
         },
         {
-          text = "Подобрать",
+          text = "Pick up ",
           action = "next",
           value = 2
         }
       }
     },
     {
-      text = "Взяв в руки необычный для этих мест предмет, " .. name .. " узнает в нем Амулет. На обратной стороне амулета выцарапана карта. " .. name .. " оглядевшись понимает, куда ведет карта.",
+      text = "Taking a closer look on that something " .. name .. " recognizes an Amulet in it. There's a map on the back side. ",
       buttons = {
         {
-          text = "Выкинуть амулет и продолжить путь",
+          text = "Throw it out and continue walking further ",
           action = "close"
         },
         {
-          text = "Дойти до места, обозначенного картой. (-30 времени)",
+          text = "Check out the place on the map. (-30 time)",
           action = "next",
           value = 3,
           lost = {
@@ -34,10 +34,10 @@ local e = function(world)
       }
     },
     {
-      text = "Дойдя до места вы обнаруживаете ... кости!? До вас доносится смех самой смерти.",
+      text = "When you got to the place you only found someone's bones, nothing useful was there. You presume the death\'s laughing at you. ",
       buttons = {
         {
-          text = "Продолжить путь",
+          text = "Continue your journey",
           action = "close"
         }
       }

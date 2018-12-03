@@ -4,10 +4,10 @@ local e = function(world)
 	return {
 		{
 			icon = "1",
-			text = "Ваше время истекло, чтобы продолжить МОЮ игру, я должен забрать одного из вас.",
+			text = "The time has run out. Death is gonna take someone's life.",
 			buttons = {
 				{
-					text = "Дальше",
+					text = "Continue",
 					action = "next",
 					value = 2
 				}
@@ -15,10 +15,10 @@ local e = function(world)
 		},
     {
 			icon = "1",
-			text = "Вышла смерть из-за тумана, достала ножик из кармана, буду резать, буду бить, заберу я жизнь " .. name .. ".",
+			text = "Death take " .. name .. ".",
 			buttons = {
 				{
-					text = "Дальше",
+					text = "Next",
 					action = "close",
 					reward = {
             time = 45

@@ -4,17 +4,17 @@ local e = function (world)
       text = "...",
       buttons = {
         {
-          text = "Дальше",
+          text = "Next",
           action = "next",
           value = 2
         }
       }
     },
     {
-      text = "Что это за место? Как мы здесь оказались?",
+      text = "What is this place? How did we end up here? ",
       buttons = {
         {
-          text = "Дальше",
+          text = "Next",
           action = "close"
         }
       }

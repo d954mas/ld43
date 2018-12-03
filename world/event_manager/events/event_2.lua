@@ -3,10 +3,10 @@ local e = function(world)
   local name = char and char:get_name() or "CHARACTER_NAME"
   return {
     {
-      text = name .. " нашел немного старых консерв. Возможно, вам хватит этого на некоторое время.",
+      text = name .. "... has found some old cans, they look untouched. It would probably give us a little time. ",
       buttons = {
         {
-          text = "Дальше",
+          text = "Next",
           action = "close",
           reward = {
             food = 10

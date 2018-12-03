@@ -1,13 +1,13 @@
 local e = function(world)
   return {
     {
-      text = "Началась невиданная для эти краев метель. Некоторые деревья были сорваны с корнем. Вы решили переждать метель в пещере.",
+      text = "A wind is only getting stronger, suddenly a snow storm has begun. You decided to wait into the safety until it would calm down.",
       buttons = {
         {
-          text = "Дальше",
+          text = "Next",
           action = "close",
           lost = {
-            time = 15
+            time = 1
           }
         }
       }

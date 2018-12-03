@@ -4,10 +4,10 @@ local e = function(world)
 	return {
 		{
 			icon = "1",
-			text = "Вы решили остановиться, чтобы поискать пропитание.",
+			text = "You thought if you should search for food.",
 			buttons = {
 				{
-					text = "Искать. Потратить " .. time .. " времени.",
+					text = "Search and spend  (" .. time .. " time) on it.",
 					action = "close",
 					reward = {
 						 food = math.random(0, 3 * count)
@@ -18,7 +18,7 @@ local e = function(world)
 				},
 				{
 					action = "close",
-					text = "Продолжить путь."
+					text = "Walk further."
 				}
 			}
 		}

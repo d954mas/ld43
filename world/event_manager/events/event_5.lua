@@ -5,15 +5,15 @@ local e = function(world)
   local rand_char_name = rand_char and rand_char:get_name()
   return char and {
     {
-      text = "Неожиданно для всех " .. name .. " останавливается.\n'Я слышу чьи-то шаги.'\nПутники оглядываются и обнаруживают медленно двигающегося медведя. Кажется, он не успел еще их заметить.",
+      text = "All of a sudden " .. name .. " stops and says there's a sound walking from behind. Wanderers see a slowly moving bear, which doesn't seem to notice them yet. ",
       buttons = {
         {
-          text = "Бежать по дороге",
+          text = "Run further ",
           action = "next",
           value = 2
         },
         {
-          text = "Спрятаться и переждать (-20 времени)",
+          text = "Hide and wait until it's safe  (-20 time)",
           action = "close",
           lost = {
             time = 20
@@ -22,10 +22,10 @@ local e = function(world)
       }
     },
     {
-      text = "Путники практически одновременно начинают бежать дальше по дороге. Все, кроме " .. name .. ". Но никто этого не замечает. Кроме медведя.",
+      text = "Everybody runs as fast as they only could except " .. name .. ".but nobody notices. Besides the bear.",
       buttons = {
         {
-          text = "Продолжить путь без " .. name,
+          text = "Continue without " .. name,
           action = "close",
           lost = {
             character = char:get_id()
@@ -36,10 +36,10 @@ local e = function(world)
   }
   or {
     {
-      text = "Путники устали от длинной пустынной и не меняющей своего направления дороги, их слух притупился от постоянного ветра и снега. Как вдруг неожиданно для всех на " .. rand_char_name .. " бросается белый медведь. Остальные от страха побежали дальше по тропе. Медведь не стал их преследовать. Кажется, ему хватило одного.",
+      text = "Wanderers get pretty tired of walking by this lonesome road, their senses lose it's sharpness, all of a sudden an arctic bear being completely unnoticed gets closer and attacks " .. rand_char_name .. " . Driven by fear everybody runs, but the bear doesn't follow. Seems like the one was enough. ",
       buttons = {
         {
-          text = "Продолжить путь без " .. rand_char_name,
+          text = "Continue without " .. rand_char_name,
           action = "close",
           lost = {
             character = rand_char:get_id()

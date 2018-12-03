@@ -6,23 +6,23 @@ local e = function(world)
   return
   {
     {
-      text = "Неожиданно для всех " .. rand_name .. " падает наземь.\n'Аааййй, как больно. Моя нога!'.\nПохоже, путнику требуется помощь.",
+      text = rand_name .. " stumbles and whips in pain, some help seem to be required. ",
       buttons = {
         char and {
-          text = name .. " может быстрее залечить травму (-10 время)",
+          text = name .. "  can heal a wound faster (-10 time)",
           action = "close",
           lost = {
             time = 10
           }
         } or {
-          text = "Остаться и дождаться, пока боль пройдет (-25 время)",
+          text = "Wait until a wanderer can walk (-25 time)",
           action = "close",
           lost = {
             time = 25
           }
         },
         world:count_chars() > 1 and {
-          text = "Оставить " .. rand_name .. " и продолжить путь",
+          text = "Leave " .. rand_name .. " behind and walk further. ",
           action = "close",
           lost = {
             character = random_char:get_id()

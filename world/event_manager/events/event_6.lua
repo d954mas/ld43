@@ -3,10 +3,10 @@ local e = function(world)
   local rand = robert and 100 or math.random(0, 100)
   return {
     {
-      text = "Вы встречаете говорящее дерево.\n'Я - дерево азарта, а мои карты - единственное чему можно верить. Люди лгут, а карты лгать не могут. Достань мою карту и, если на карте будет число большее 50, тебя ждет божественная награда. Но может и не повезти...'",
+      text = "On the way you hear an unfamiliar voice and find out it comes out of a tree. You think you completely lost your mind by now when it says, \"Do you want to play a game? People lie, cards never do. If you would be lucky enough to take a card with a number more then 50, I\'ll reward you generously. But if you won\'t, well...",
       buttons = {
         robert and {
-          text = robert:get_name() .. " будет играть" ,
+          text = "Let ".. robert:get_name() .. " play" ,
           action = "next",
           lost = rand <= 50 and {
             time = 40,
@@ -19,7 +19,7 @@ local e = function(world)
           value = 2
         }
         or {
-          text = "Сыграть" ,
+          text = "Give it a chance" ,
           action = "next",
           lost = rand < 0.5 and {
             time = 40,
@@ -32,13 +32,13 @@ local e = function(world)
           value = 2
         },
         {
-          text = "Пройти мимо дерева" ,
+          text = "Walk past" ,
           action = "close"
         }
       },
     },
       {
-        text = "Вам выпадает число " .. rand .. ". " .. (robert and "Роберт доволен собой" or rand <= 50 and "Проигрышь! Карты лгать не могут. Получите свою награду." or "Ого, я удивлен. Карты не лгут, получите награду.") ,
+        text = "You get a card with the number of " .. rand .. ". " .. (robert and "Robert is proud of himself" or rand <= 50 and "Well, you lose. Cards don't lie. Take your reward " or "Surprising. Yet cards don't lie, take your reward .") ,
         action = "close",
         lost = rand <= 50 and {
           time = 50,
@@ -50,7 +50,7 @@ local e = function(world)
         },
         buttons = {
           {
-            text = "Продолжить путь" ,
+            text = "Continue your journey " ,
             action = "close"
           }
         }

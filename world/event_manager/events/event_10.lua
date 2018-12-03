@@ -6,15 +6,15 @@ local e = function(world)
   return
   {
     {
-      text = "Вашь путь простирается через замерзшее озеро, нужно идти аккуранее, чтобы не провалиться под лед. Но в теории у озера должны быть берега, можете попробовать поискать другой путь. (На самом деле путники не уверены, что это озеро)",
+      text = "Your path leads to something which looks like a frozen lake, you think you can cross it carefully.",
       buttons = {
         {
-          text = "Пройти через лед",
+          text = "Cross the lake ",
           action = "next",
           value = char and 3 or math.random(2, 3)
         },
         {
-          text = "Искать другой путь (-5 время)",
+          text = "Search for a way to get around  (-5 time)",
           action = "next",
           lost = {
             time = 5
@@ -24,10 +24,10 @@ local e = function(world)
       }
     },
     {
-      text = "Вы достигаете другого берега без происшествия, но немного потратили лишнего времени из-за осторожности (-15 времени).",
+      text = "You got to the other side just fine, it's just you have spent some extra time being careful.  (-15 time).",
       buttons = {
         {
-          text = "Продолжить путь",
+          text = "Continue your journey",
           action = "close",
           lost = {
             time = 15
@@ -36,15 +36,15 @@ local e = function(world)
       }
     },
     {
-      text = char and ("Вы дошли до середины озера, как вдруг " .. name .. " проваливается под лед, скорее всего из-за веса протеза") or ("Вы дошли до середины озера, как вдруг " .. rand_name .. " проваливается под лед."),
+      text = char and ("On the half of the way " .. name .. "  falls through the ice, probably being the most heavy of all ") or ("On the half of the way " .. rand_name .. " falls through thin ice."),
       buttons = {
         {
-          text = "Попытаться вытащить " .. (char and name or rand_name),
+          text = "Try to help " .. (char and name or rand_name),
           action = "next",
           value = 4
         },
         {
-          text = "Бежать скорее к берегу, пока трещины не дошли до вас",
+          text = "Run to the other side.",
           action = "close",
           lost = {
             character = char:get_id()
@@ -53,10 +53,10 @@ local e = function(world)
       }
     },
     {
-      text = "К счастью вы все живые добираетесь до берега, но потратив очень много времени и сил (-15 времени, -2 еды).",
+      text = "Everybody gets to the other side harmless and tired, but time has been spent. (-15 time, -2 food).",
       buttons = {
         {
-          text = "Продолжить ваш путь",
+          text = "Continue your journey",
           action = "close",
           lost = {
             time = 15,

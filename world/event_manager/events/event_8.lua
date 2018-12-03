@@ -2,10 +2,10 @@ local e = function(world)
   return
   {
     {
-      text = "Путники встречают на своей дороге очень подозрительную яблоню. Дерево не имеет листьев, лишь сочный яблоки свисают с голых ветвей. ",
+      text = "Wanderers see an apple tree full of reddish deliciously looking apples, which is kinda weird to see in the middle of nowhere. The suspicion only grows as they notice it has no leaves on its thin branches. ",
       buttons = {
         {
-          text = "Собрать яблоки и перекусить (-20 времени)",
+          text = "Collect and eat some apples  (-20 time)",
           action = "close",
           reward = {
             food = math.random(8, 12)
@@ -16,7 +16,7 @@ local e = function(world)
 
         },
         {
-          text = "Пройти мимо",
+          text = "Walk past ",
           action = "close"
         }
       }

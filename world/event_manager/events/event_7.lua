@@ -4,29 +4,29 @@ local e = function(world)
   return
   {
     {
-      text = "Путники находят скелет, рядом с которым лежат мешок и записка. Видно, что кости перебирали, но мешок завязан на узел и не тронут.",
+      text = "You have found a corpse, there's a mysterious note and a bag lying right beside it. The bag is tied up and looks untouched. ",
       buttons = {
         {
-          text = "Продолжить путь",
+          text = "Walk past",
           action = "close"
         },
         {
-          text = "Открыть мешок",
+          text = "Open the bag",
           action = "next",
           value = 2
         },
         {
-          text = "Прочесть записку",
+          text = "Read the note ",
           action = "next",
           value = 3
         }
       }
     },
     {
-      text = name .. " решается открыть сумку. Мгновенно из сумки на лицо прыгает огромный паук. Путники в ужасе убегают прочь. Но " .. name .. " не бежит." ,
+      text = name .. " dares to open the bag, in a flash a giant spider jumps right on the face. Wanderers run away in fear, but " .. name .. " doesn't." ,
       buttons = {
         {
-          text = "Бежать как можно дальше отсюда",
+          text = "Run as far as you can ",
           action = "close",
           lost = {
             character = char:get_id()
@@ -35,15 +35,15 @@ local e = function(world)
       }
     },
     {
-      text = "'Мне нужно бежать, но мешок мешает. Я оставлю его здесь, но в скором времени вернусь. Большая просьба не открывать.'",
+      text = "'I have to leave this bag right here, but please, don't touch it. I'm coming back for it as soon as I can. '",
       buttons = {
         {
-          text = "Открыть сумку",
+          text = "Оpen the bag ",
           action = "next",
           value = 2
         },
         {
-          text = "Пойти дальше",
+          text = "Walk past",
           action = "close"
         }
       }

@@ -3,10 +3,10 @@ local e = function(world)
 	local name = char and char:get_name() or "CHARACTER_NAME"
 	return {
 		{
-			text = "Эти люди достигли мира живых. Почтим память тех, кем путникам прилось пожертвовать.",
+			text = "Those people managed to win the game of Death and return to the world of the living. The sacrifices has been made shouldn't be forgotten.",
 			buttons = {
 				{
-					text = "Завершить игру",
+					text = "End the game",
 					action = "restart"
 				}
 			}
