@@ -7,7 +7,7 @@ uniform lowp vec4 tint1;
 uniform lowp vec4 resolution;
 
 //RADIUS of our vignette, where 0.5 results in a circle fitting the screen
-const float RADIUS = 11;
+const float RADIUS = 11.0;
 //softness of our vignette, between 0.0 and 1.0\n" + 
 const float SOFTNESS = 0.55;
 const vec3 SEPIA = vec3(1.2, 1.0, 0.8);

@@ -11,7 +11,7 @@ local Sounds = {
 }
 
 local Music = {
-    {time = 32, sound = "/sounds#start"},
+    {time = 32, sound = "/sounds#loop"},
     {time = 44, path = 11254/3,sound = "/sounds#loop_1"},
     {time = 64, path = 14254/3*2, sound = "/sounds#loop_2"},
     {time = 64, path = 10000000000, sound = "/sounds#loop_3"}
