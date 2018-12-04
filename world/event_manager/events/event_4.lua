@@ -3,7 +3,7 @@ local e = function(world)
   local name = char and char:get_name() or "CHARACTER_NAME"
   return {
     {
-      text = name .. "... has noticed something peculiarly shiny on the road. ",
+      text = name .. " has noticed something peculiarly shiny on the road. ",
       buttons = {
         {
           text = "Walk past ",
