@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5f556a55-332e-4a71-9fea-121fa984465c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scenes/game/gui/help_gui/help_gui.gui_script" beforeDir="false" afterPath="$PROJECT_DIR$/scenes/game/gui/help_gui/help_gui.gui_script" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/gui/deadline_help.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/gui/deadline_help.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/default.texture_profiles" beforeDir="false" afterPath="$PROJECT_DIR$/default.texture_profiles" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/game.project" beforeDir="false" afterPath="$PROJECT_DIR$/game.project" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -80,7 +81,7 @@
         <entry file="file://$PROJECT_DIR$/scenes/game/gui/help_gui/help_gui.gui_script">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="518">
-              <caret line="48" column="138" selection-start-line="48" selection-start-column="138" selection-end-line="48" selection-end-column="138" />
+              <caret line="47" column="138" selection-start-line="47" selection-start-column="138" selection-end-line="47" selection-end-column="138" />
             </state>
           </provider>
         </entry>
@@ -264,7 +265,7 @@
       <workItem from="1543682471973" duration="3222000" />
       <workItem from="1543746885570" duration="2172000" />
       <workItem from="1543778868873" duration="3922000" />
-      <workItem from="1543862840204" duration="12795000" />
+      <workItem from="1543862840204" duration="13394000" />
     </task>
     <task id="LOCAL-00001" summary="ambient">
       <created>1543756920684</created>
@@ -277,7 +278,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="37938000" />
+    <option name="totallyTimeSpent" value="38537000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1723" height="1040" extended-state="0" />
@@ -602,7 +603,7 @@
     <entry file="file://$PROJECT_DIR$/scenes/game/gui/help_gui/help_gui.gui_script">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="518">
-          <caret line="48" column="138" selection-start-line="48" selection-start-column="138" selection-end-line="48" selection-end-column="138" />
+          <caret line="47" column="138" selection-start-line="47" selection-start-column="138" selection-end-line="47" selection-end-column="138" />
         </state>
       </provider>
     </entry>
