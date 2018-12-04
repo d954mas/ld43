@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5f556a55-332e-4a71-9fea-121fa984465c" name="Default Changelist" comment="" />
+    <list default="true" id="5f556a55-332e-4a71-9fea-121fa984465c" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scenes/game/gui/help_gui/help_gui.gui_script" beforeDir="false" afterPath="$PROJECT_DIR$/scenes/game/gui/help_gui/help_gui.gui_script" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,27 +25,27 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="PLAIN_TEXT" value="3" />
-          <entry key="lua" value="168" />
+          <entry key="lua" value="169" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="PLAIN_TEXT" value="2" />
-          <entry key="lua" value="1545" />
+          <entry key="lua" value="1571" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="collection" value="1" />
           <entry key="fp" value="1" />
-          <entry key="gui_script" value="7" />
+          <entry key="gui_script" value="8" />
           <entry key="lua" value="156" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="fp" value="2" />
-          <entry key="gui_script" value="34" />
+          <entry key="gui_script" value="60" />
           <entry key="lua" value="516" />
         </counts>
       </usages-collector>
@@ -74,10 +77,10 @@
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/world/event_manager/events/event_win.lua">
+        <entry file="file://$PROJECT_DIR$/scenes/game/gui/help_gui/help_gui.gui_script">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+            <state relative-caret-position="518">
+              <caret line="48" column="138" selection-start-line="48" selection-start-column="138" selection-end-line="48" selection-end-column="138" />
             </state>
           </provider>
         </entry>
@@ -140,6 +143,7 @@
         <option value="$PROJECT_DIR$/world/event_manager/events/event_camp.lua" />
         <option value="$PROJECT_DIR$/world/event_manager/events/event_time.lua" />
         <option value="$PROJECT_DIR$/world/event_manager/events/event_win.lua" />
+        <option value="$PROJECT_DIR$/scenes/game/gui/help_gui/help_gui.gui_script" />
       </list>
     </option>
   </component>
@@ -150,7 +154,7 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="width" value="960" />
+    <option name="width" value="1723" />
     <option name="height" value="1040" />
   </component>
   <component name="ProjectView">
@@ -192,6 +196,14 @@
               <item name="game" type="462c0819:PsiDirectoryNode" />
               <item name="gui" type="462c0819:PsiDirectoryNode" />
               <item name="character_gui" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="LD43" type="b2602c69:ProjectViewProjectNode" />
+              <item name="LD43" type="462c0819:PsiDirectoryNode" />
+              <item name="scenes" type="462c0819:PsiDirectoryNode" />
+              <item name="game" type="462c0819:PsiDirectoryNode" />
+              <item name="gui" type="462c0819:PsiDirectoryNode" />
+              <item name="help_gui" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="LD43" type="b2602c69:ProjectViewProjectNode" />
@@ -252,7 +264,7 @@
       <workItem from="1543682471973" duration="3222000" />
       <workItem from="1543746885570" duration="2172000" />
       <workItem from="1543778868873" duration="3922000" />
-      <workItem from="1543862840204" duration="11799000" />
+      <workItem from="1543862840204" duration="12795000" />
     </task>
     <task id="LOCAL-00001" summary="ambient">
       <created>1543756920684</created>
@@ -265,14 +277,14 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="36942000" />
+    <option name="totallyTimeSpent" value="37938000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="960" height="1040" extended-state="0" />
+    <frame x="0" y="0" width="1723" height="1040" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Learn" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.32522124" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.33653268" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -289,7 +301,7 @@
       <window_info anchor="bottom" id="LuaCheck" order="7" />
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.3616352" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="Version Control" order="10" visible="true" weight="0.23829788" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="10" visible="true" weight="0.23829788" />
       <window_info anchor="bottom" id="Messages" order="11" />
       <window_info anchor="right" id="Database" />
       <window_info anchor="right" id="Maven Projects" />
@@ -582,8 +594,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/world/event_manager/events/event_win.lua">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+        <state relative-caret-position="144">
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scenes/game/gui/help_gui/help_gui.gui_script">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="518">
+          <caret line="48" column="138" selection-start-line="48" selection-start-column="138" selection-end-line="48" selection-end-column="138" />
         </state>
       </provider>
     </entry>
