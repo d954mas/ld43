@@ -3,6 +3,10 @@ textures {
   name: "gui"
   texture: "/assets/images/gui/gui.atlas"
 }
+textures {
+  name: "help"
+  texture: "/assets/images/gui/help.atlas"
+}
 background_color {
   x: 0.0
   y: 0.0
@@ -96,7 +100,7 @@ nodes {
   }
   type: TYPE_BOX
   blend_mode: BLEND_MODE_ALPHA
-  texture: ""
+  texture: "help/deadline_help"
   id: "help_box"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
